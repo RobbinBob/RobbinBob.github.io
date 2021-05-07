@@ -1,3 +1,5 @@
-model-viewer#model1 {
+model-viewer#SkySwatID {
   --poster-color: transparent;
+  width: auto;
+  height: auto;
 }
