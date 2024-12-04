@@ -1,29 +1,53 @@
 <!DOCTYPE html>
 <html>
-<head>
-<style>
-body {
-  margin-left: 200px;
-  background: #5d9ab2 url("img_tree.png") no-repeat top left;
-}
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 
-.center_div {
-  border: 1px solid gray;
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
-  background-color: #d0f0f6;
-  text-align: left;
-  padding: 8px;
-}
-</style>
-</head>
-<body>
+    <style>
+    body {
+      background: #000000 url("src/images/Minitile.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
 
-<div class="center_div">
-  <h1>Hello World!</h1>
-  <p>This example contains some advanced CSS methods you may not have learned yet. But, we will explain these methods in a later chapter in the tutorial.</p>
-</div>
+    .unselectable {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
 
-</body>
+    .center_div {
+      border-radius: 25px;
+      border: 1px solid rgb(255, 255, 255);
+      margin-left: auto;
+      margin-right: auto;
+      width: 200px;
+      height: 50px;
+      background-color: #ffffff00;
+      text-align: center;
+    }
+    .middle_div{
+      width: 99%;
+      margin-left: auto;
+      margin-right: auto;
+      position: absolute;
+      bottom: 18%;
+      text-align: center;
+    }
+    </style>
+  </head>
+
+  <body>
+    <div class="middle_div unselectable">
+      <h1 style="font-family: Figtree; color: #ffffff; font-weight: 700; font-size: 50px;">Game Development</h1>
+      <div class="center_div">
+        <p style="font-family:Figtree; color:#ffffff; font-weight: 100;">COMING SOON</p>
+      </div>
+    </div>
+  </body>
 </html>
