@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .item {
+                min-width: 250px;
+                min-height: 250px;
+                max-height: 375px;
+                max-width: 375px;
+                width: 15vw;
+                height: 15vw;
+                background-color: rgb(0, 0, 0);
+                overflow: hidden;
+                margin: 8px;
+            }
+            .item-wrapper {
+                position: relative;
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+            .item-text {
+                position: absolute;
+                top: 45%;
+                left: 50%;
+                text-align: center;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+            .item-wrapper img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: opacity 0.3s ease;
+            }
+            .item-wrapper:hover img{
+                opacity: 0.5;
+            }
+            .item-wrapper:hover .item-text{
+                opacity: 1;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/src/styles/global.css"> 
+        <link rel="stylesheet" href="/src/styles/figtree.css"> 
+        <link rel="stylesheet" href="/src/styles/flex.css"> 
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+        <script src="/src/scripts/elements.js"></script>
+        <script src="/src/scripts/spacer.js"></script>
+    </head>
+    <body class="figtree">
+        <header id="header"></header>
+        <div class="flex-container-row-nowrap-center-center" style="z-index: 5; background-image: url(/src/images/Parkisplash.png); background-position: center; background-size: cover; width: 100%; min-height: 200px; max-height: 600px;">
+            <h1 style="font-size: 450%;">PARKITECT</h1>
+        </div>
+        <main class="flex-container-collumn-nowrap-center-center" style="width: 100%; height: auto; overflow: hidden;">    
+            <div class="flex-container-collumn-nowrap-center-center" style="z-index: 2;">
+                <p style="margin-left: 15px; margin-right: 15px;">Over the years I have made a handfull of content and code mods for Parkitect, using tools like C#, Unity, Blender, Affinity Suite, Pureref and VisualStudio 2022.</p>
+            </div>
+            <custom-spacer style="z-index: 2;"></custom-spacer>
+            <div class="flex-container-column-wrap-center-start" style="z-index: 2; width: 75%; height: auto;">
+                <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2994724118" class="item">
+                    <div class="item-wrapper">
+                        <img src="/src/images/afterburner.png">
+                        <h1 class="item-text">Afterburner & Revolution</h1>
+                    </div>
+                </a>
+                <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3265232818" class="item">
+                    <div class="item-wrapper">
+                        <img src="/src/images/frisbee.png">
+                        <h1 class="item-text">Giant Frisbee</h1>
+                    </div>
+                </a>
+                <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3278761264" class="item">
+                    <div class="item-wrapper">
+                        <img src="/src/images/musikexpress.png">
+                        <h1 class="item-text">Musik-Express & Matterhorn</h1>
+                    </div>
+                </a>
+                <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2986180336" class="item">
+                    <div class="item-wrapper">
+                        <img src="/src/images/parachute.png">
+                        <h1 class="item-text">Parachute Tower</h1>
+                    </div>
+                </a>
+                <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2801391969" class="item">
+                    <div class="item-wrapper">
+                        <img src="/src/images/topspin.png">
+                        <h1 class="item-text">Topspin Floorless & Classic</h1>
+                    </div>
+                </a>
+                <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2797406628" class="item">
+                    <div class="item-wrapper">
+                        <img src="/src/images/intamin.png">
+                        <h1 class="item-text">Multidimensional Coaster</h1>
+                    </div>
+                </a>
+            </div>
+            <custom-spacer style="z-index: 2;"></custom-spacer>
+            <div class="flex-container-collumn-nowrap-center-center" style="z-index: 2;">
+                <p style="margin-left: 15px; margin-right: 15px;">To assist with creating certain mods I designed a framework that would simplify the process of importing more customised rides into the game.</p>
+                <a href="https://github.com/RobbinBob/Parkitect-Modded-FlatRides" style="text-decoration: underline; color: #ffffff">
+                    <h2>FlatRideUtility</h2>
+                </a>
+            </div>
+        </main>
+        <footer id="footer"></footer>
+    </body>
+</html>

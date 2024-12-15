@@ -1,0 +1,65 @@
+p, .global-paragraph-text {
+    font-family: "Figtree", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: medium;
+    color: #f3f3f3;
+}
+h1, .global-header1-text {
+    font-family: "Figtree", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: xx-large;
+    color: #f3f3f3;
+}
+h2, .global-header2-text {
+    font-family: "Figtree", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 525;
+    font-style: normal;
+    font-size: x-large;
+    color: #f3f3f3;
+}
+h3, .global-header3-text {
+    font-family: "Figtree", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: large;
+    color: #f3f3f3;
+}
+h4, .global-header4-text {
+    font-family: "Figtree", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: large;
+    color: #f3f3f3;
+}
+
+
+.clickable { 
+    cursor: default;
+}
+.clickable:hover { 
+    cursor: pointer;
+}
+
+.link-underline {
+    text-decoration: inherit;
+}
+.link-underline:hover {
+    text-decoration: underline;
+}
+
+a {
+    text-decoration: none;
+}
+body {
+    margin: 0;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #303030;
+}

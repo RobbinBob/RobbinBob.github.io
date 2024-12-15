@@ -1,0 +1,23 @@
+.header-box {
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    height: 75px;
+    z-index: 5;
+
+    background-color:#0000002c;
+}
+.header-name { 
+    font-size: xx-large;
+    padding-left: 15px;
+    color: #ffffff;
+    background-color: #ffffff00;
+    outline: none;
+    border:none
+}
+.header-name:hover { 
+    outline: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+}

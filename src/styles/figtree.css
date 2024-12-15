@@ -1,0 +1,21 @@
+.figtree { 
+    font-family: "Figtree", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+.figtree .figtree-w300 {
+    font-weight: 300;
+}
+.figtree .figtree-w400 {
+    font-weight: 400;
+}
+.figtree .figtree-w500 {
+    font-weight: 500;
+}
+.figtree .figtree-w700 {
+    font-weight: 700;
+}
+.figtree .figtree-w900 {
+    font-weight: 900;
+}
