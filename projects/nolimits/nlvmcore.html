@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .api-element {
+                cursor: pointer;
+                width: 100%;
+                height: 25px;
+            }
+            .api-element:hover {
+                cursor: pointer;
+            }
+
+            .api-element-text {
+                padding-left: 25px;
+                padding-right: 25px;
+                margin-top: 4px;
+                margin-bottom: 4px;
+            }
+
+            .api-element-type {
+                margin-top: 2px;
+                margin-bottom: 8px;
+                text-decoration: underline;
+                cursor: default;
+            }
+            .api-element-type:hover {
+                cursor: pointer;
+            }
+        </style>
+
+        <link rel="icon" href="/src/images/Goat.png">
+        <link rel="canonical" href="/projects/nolimits/nlvmcore.html">
+
+        <link rel="stylesheet" href="/src/styles/global.css">
+        <link rel="stylesheet" href="/src/styles/figtree.css">
+        <link rel="stylesheet" href="/src/styles/flex.css">
+
+        <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+        <script src="/src/scripts/elements.js"></script>
+        <script src="/src/scripts/spacer.js"></script>
+        <script src="/src/scripts/dropdown.js"></script>
+        <script src="/src/scripts/nlvmcoreapi.js"></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/a11y-dark.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/java.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+    <body class="figtree">
+        <header id="header"></header>
+        <div class="flex-container-row-nowrap-center-center" style="z-index: 5; background-image: url(/src/images/chun4.png); background-position: center; background-size: cover; width: 100%; min-height: 200px; max-height: 600px;">
+            <h1 style="font-size: 450%;">NLVM-CORE</h1>
+        </div>
+        <main class="flex-container-collumn-nowrap-center-center" style="width: 100; height:auto; overflow: hidden;">
+            <a href="https://github.com/RobbinBob/NLVMCore" style="text-decoration: underline; color: #ffffff">
+                <h2>Github Repository</h2>
+            </a>
+            
+            <custom-spacer style="z-index: 2;"></custom-spacer>
+            <h2>Motivations</h2>
+            <p style="padding-left: 15%; padding-right: 15%; justify-content: center;">It's not news that the built in API kinda sucks... It's been stuck in the old Java ways for a long time now, and lacks some much needed QoL features. This is where NLVMCore API helps to fill in the gaps and make coding more straight-forward!</p>
+            <custom-spacer style="z-index: 2;"></custom-spacer>
+            <h2>API</h2>
+            <div class="flex-container-row-nowrap-spacebetween-start" style="z-index: 2; width: 100%;">
+                <div class="flex-container-collumn-nowrap-start-start" style="background-color: rgb(31, 31, 31); min-width: 200px; max-width: 500px; flex-grow: 0; padding-bottom: 15px;">
+                    <h2 style="padding-left: 25px;">Classes</h2>
+                    <div id="api-overview">
+                    </div>
+                </div>
+                <div style="background-color: rgba(83, 83, 83, 0.39); flex-grow: 1; padding-left: 25px; padding-right: 25px;">
+                    <h2 id="api-element-name" style="text-align: center; margin-top: 10px; margin-bottom: 10px;">Class</h2>
+                    <custom-spacer></custom-spacer>
+                    <p id="api-element-description">A short snippet about the type that you have clicked on!</p>
+                    <div class="flex-container-collumn-nowrap-start-start">
+                        <h3 style="margin-bottom: 2px;">Package</h3>
+                        <div id="api-element-package"></div>
+                        <h3 style="margin-bottom: 2px;">Declaration</h3>
+                        <div id="api-element-declaration"></div>
+                    </div>
+                    <div id="api-element-constructors-wrapper" class="flex-container-collumn-nowrap-start-start">
+                        <custom-spacer></custom-spacer>
+                        <h3 style="margin-bottom: 2px;">Constructors</h3>
+                        <div id="api-element-constructors" class="flex-container-collumn-nowrap-start-start" style="padding-bottom: 15px;"></div>
+                    </div>
+                    
+                    <div id="api-element-members-wrapper" class="flex-container-collumn-nowrap-start-start">
+                        <custom-spacer></custom-spacer>
+                        <h3 style="margin-bottom: 2px;">Members</h3>
+                        <div id="api-element-members" class="flex-container-collumn-nowrap-start-start" style="padding-bottom: 15px;"></div>
+                    </div>
+                    
+                    <div id="api-element-inherited-members-wrapper" class="flex-container-collumn-nowrap-start-start">
+                        <custom-spacer></custom-spacer>
+                        <h3 style="margin-bottom: 2px;">Inherited - Members</h3>
+                        <div id="api-element-inherited-members" class="flex-container-collumn-nowrap-start-start" style="padding-bottom: 15px;"></div>
+                    </div>
+                        
+                    <div id="api-element-methods-wrapper" class="flex-container-collumn-nowrap-start-start">
+                        <custom-spacer></custom-spacer>
+                        <h3 style="margin-bottom: 2px;">Methods</h3>
+                        <div id="api-element-methods" class="flex-container-collumn-nowrap-start-start" style="padding-bottom: 15px;"></div>
+                    </div>
+                    
+                    <div id="api-element-inherited-methods-wrapper" class="flex-container-collumn-nowrap-start-start">                 
+                        <custom-spacer></custom-spacer>
+                        <h3 style="margin-bottom: 2px;">Inherited - Methods</h3>
+                        <div id="api-element-inherited-methods" class="flex-container-collumn-nowrap-start-start" style="padding-bottom: 15px;"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer id="footer"></footer>
+    </body>
+</html>

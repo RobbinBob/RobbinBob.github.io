@@ -1,0 +1,3525 @@
+{
+    "classes": [
+        {
+            "type": "class",
+            "package": "scripts",
+            "libraries": [
+                "com.nolimitscoaster",
+                "nlvm.math3d",
+                "scripts.math.Mathf"
+            ],
+            "accessor": "public final",
+            "name": "Animation",
+            "full_name": "scripts.Animation",
+            "extends": "UpdateableObject",
+            "description": "A class that allows easy manipulation of SceneObject's with key-frame animations.",
+            "members": [
+                {
+                    "name": "FRAME_RATE",
+                    "type": "float",
+                    "accessor": "public static final",
+                    "description": "The fixed frame-rate that all Animations run on."
+                }
+            ],
+            "methods": [
+                {
+                    "args": [],
+                    "name": "Play",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Begins playing the animation."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "float",
+                            "name": "startTime",
+                            "description": "The time(seconds) to begin playing from."
+                        }
+                    ],
+                    "name": "Play",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Begins playing the animation from a time stamp."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "float",
+                            "name": "startTime",
+                            "description": "The time(seconds) to begin playing from."
+                        },
+                        {
+                            "type": "float",
+                            "name": "stopTime",
+                            "description": "The time(seconds) to stop playing when reached."
+                        }
+                    ],
+                    "name": "Play",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Begins playing the animation from a time stamp and stops at another."
+                },
+                {
+                    "args": [],
+                    "name": "PlayBackward",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Plays the animation in reverse from the end."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "float",
+                            "name": "startTime",
+                            "description": "The time(seconds) to begin playing backwards from."
+                        }
+                    ],
+                    "name": "PlayBackward",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Plays the animation in reverse from a time-stamp."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "float",
+                            "name": "timeStamp",
+                            "description": "The time(seconds) to set the animation to."
+                        }
+                    ],
+                    "name": "SetFrame",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Sets the animation to a given time-stamp."
+                },
+                {
+                    "args": [],
+                    "name": "Pause",
+                    "return": "bool",
+                    "accessor": "public",
+                    "return_desc": "False if stopped playing, otherwise True if began playing.",
+                    "description": "Pauses and resumes the animation."
+                },
+                {
+                    "args": [],
+                    "name": "Stop",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Stops the animation and resets it."
+                },
+                {
+                    "args": [],
+                    "name": "GetCurrentFrame",
+                    "return": "int",
+                    "accessor": "public",
+                    "return_desc": "Returns the current frame the animation is at.",
+                    "description": "Gets the current frame of the animation."
+                },
+                {
+                    "args": [],
+                    "name": "GetAnimationFrames",
+                    "return": "int",
+                    "accessor": "public",
+                    "return_desc": "Returns the overall animation frames.",
+                    "description": "Gets the total frames in the animation."
+                },
+                {
+                    "args": [],
+                    "name": "GetAnimationTime",
+                    "return": "float",
+                    "accessor": "public",
+                    "return_desc": "Returns the overall animation time(seconds).",
+                    "description": "Gets the total time of the animation."
+                },
+                {
+                    "args": [],
+                    "name": "IsPlaying",
+                    "return": "bool",
+                    "accessor": "public",
+                    "return_desc": "True if playing, otherwise False.",
+                    "description": "Gets the state of the animation if it's playing regardless of direction."
+                },
+                {
+                    "args": [],
+                    "name": "IsPlayingBackward",
+                    "return": "bool",
+                    "accessor": "public",
+                    "return_desc": "True if playing, otherwise False.",
+                    "description": "Gets the state of the animation if it's playing in reverse."
+                },
+                {
+                    "args": [],
+                    "name": "IsPlayingForward",
+                    "return": "bool",
+                    "accessor": "public",
+                    "return_desc": "True if playing, otherwise False.",
+                    "description": "Gets the state of the animation if it's playing forward."
+                },
+                {
+                    "args": [],
+                    "name": "GetSceneObjectMatrix",
+                    "return": "nlvm.math3d.Matrix4x4f",
+                    "accessor": "public",
+                    "return_desc": "The Matrix4x4f representation of the SceneObject.",
+                    "description": "Gets the current Matrix4x4f of the animation."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "int",
+                            "name": "index",
+                            "description": "The index of the child to fetch the Matrix4x4f."
+                        }
+                    ],
+                    "name": "GetChildMatrix",
+                    "return": "nlvm.math3d.Matrix4x4f",
+                    "accessor": "public",
+                    "return_desc": "The Matrix4x4f representation of the SceneObjectElement.",
+                    "description": "Gets the current Matrix4x4f of the animation."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.String",
+                            "name": "name",
+                            "description": "The name of the child to fetch the Matrix4x4f."
+                        }
+                    ],
+                    "name": "GetChildMatrix",
+                    "return": "nlvm.math3d.Matrix4x4f",
+                    "accessor": "public",
+                    "return_desc": "The Matrix4x4f representation of the SceneObjectElement.",
+                    "description": "Gets the current Matrix4x4f of the animation."
+                }
+            ],
+            "constructors": [
+                {
+                    "args": [
+                        {
+                            "type": "com.nolimitscoaster.SceneObject",
+                            "name": "sceneObject",
+                            "description": "The SceneObject which has a key-frame animation."
+                        }
+                    ],
+                    "accessor": "public",
+                    "description": "Creates a new Animation for a SceneObject."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "com.nolimitscoaster.SceneObject",
+                            "name": "sceneObject",
+                            "description": "The SceneObject which has a key-frame animation."
+                        },
+                        {
+                            "type": "bool",
+                            "name": "canLoop",
+                            "description": "Specifies if the animation should loop repeatedly."
+                        }
+                    ],
+                    "accessor": "public",
+                    "description": "Creates a new Animation for a SceneObject."
+                }
+            ]
+        },
+        {
+            "type": "class",
+            "package": "scripts",
+            "libraries": [
+                "com.nolimitscoaster",
+                "nlvm.math3d",
+                "scripts.modifiers",
+                "scripts.utilities"
+            ],
+            "accessor": "public abstract",
+            "name": "AnimationModifier",
+            "full_name": "scripts.AnimationModifier",
+            "extends": "Behaviour",
+            "implements": [
+                "ICarModifier",
+                "IBogieModifier"
+            ],
+            "description": "Base type for simple animated train modifiers.",
+            "members": [],
+            "methods": [],
+            "constructors": []
+        },
+        {
+            "type": "class",
+            "package": "scripts",
+            "libraries": [
+                "com.nolimitscoaster",
+                "scripts.containers"
+            ],
+            "accessor": "public abstract",
+            "name": "Behaviour",
+            "full_name": "scripts.Behaviour",
+            "extends": "Script",
+            "description": "Base class to derrive any SceneObject attached scripts.",
+            "members": [
+                {
+                    "name": "m_SceneObject",
+                    "type": "SceneObject",
+                    "accessor": "protected",
+                    "description": "Reference to the SceneObject this Behaviour is attached to."
+                },
+                {
+                    "name": "m_Name",
+                    "type": "String",
+                    "accessor": "protected",
+                    "description": "The name of the SceneObject."
+                }
+            ],
+            "methods": [
+                {
+                    "args": [],
+                    "name": "Start",
+                    "return": "bool",
+                    "accessor": "public abstract",
+                    "return_desc": "Pass True to allow it to continue excecution, otherwise False to cancel.",
+                    "description": "Called once to initialize the object."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "float",
+                            "name": "tick",
+                            "description": "The time-step the previous frame took to execute."
+                        }
+                    ],
+                    "name": "Update",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Called each frame the Behaviour is active."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "float",
+                            "name": "tick",
+                            "description": "The time-step the previous frame took to execute."
+                        }
+                    ],
+                    "name": "LateUpdate",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Called each frame after Update is called."
+                },
+                {
+                    "args": [],
+                    "name": "Destroy",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Called before this Behaviour is destroyed."
+                },
+                {
+                    "args": [],
+                    "name": "toString",
+                    "return": "nlvm.lang.String",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "A String representation of this Behaviour."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.String",
+                            "name": "name",
+                            "description": "Parameter id."
+                        }
+                    ],
+                    "name": "GetFloatParameter",
+                    "return": "float",
+                    "accessor": "protected final",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Attempts to retrieve a float parameter, throws an exception if no parameter is found with the given id."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.String",
+                            "name": "name",
+                            "description": "Parameter id."
+                        }
+                    ],
+                    "name": "GetDoubleParameter",
+                    "return": "double",
+                    "accessor": "protected final",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Attempts to retrieve a double parameter, throws an exception if no parameter is found with the given id."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.String",
+                            "name": "name",
+                            "description": "Parameter id."
+                        }
+                    ],
+                    "name": "GetIntegerParameter",
+                    "return": "int",
+                    "accessor": "protected final",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Attempts to retrieve a int parameter, throws an exception if no parameter is found with the given id."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.String",
+                            "name": "name",
+                            "description": "Parameter id."
+                        }
+                    ],
+                    "name": "GetStringParameter",
+                    "return": "nlvm.lang.String",
+                    "accessor": "protected final",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Attempts to retrieve a String parameter, throws an exception if no parameter is found with the given id."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.String",
+                            "name": "name",
+                            "description": "Parameter id."
+                        }
+                    ],
+                    "name": "GetBoolParameter",
+                    "return": "bool",
+                    "accessor": "protected final",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Attempts to retrieve a bool parameter, throws an exception if no parameter is found with the given id."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.String",
+                            "name": "name",
+                            "description": "Parameter id."
+                        }
+                    ],
+                    "name": "GetCoasterParameter",
+                    "return": "com.nolimitscoaster.Coaster",
+                    "accessor": "protected final",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Attempts to retrieve a Coaster parameter, throws an exception if no parameter is found with the given id."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.String",
+                            "name": "name",
+                            "description": "Parameter id."
+                        }
+                    ],
+                    "name": "GetTriggerParameter",
+                    "return": "com.nolimitscoaster.TrackTrigger",
+                    "accessor": "protected final",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Attempts to retrieve a TrackTrigger parameter, throws an exception if no parameter is found with the given id."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.String",
+                            "name": "name",
+                            "description": "Parameter id."
+                        }
+                    ],
+                    "name": "GetBlockParameter",
+                    "return": "com.nolimitscoaster.Block",
+                    "accessor": "protected final",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Attempts to retrieve a Block parameter, throws an exception if no parameter is found with the given id."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.String",
+                            "name": "name",
+                            "description": "Parameter id."
+                        }
+                    ],
+                    "name": "GetSectionParameter",
+                    "return": "com.nolimitscoaster.Section",
+                    "accessor": "protected final",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Attempts to retrieve a Section parameter, throws an exception if no parameter is found with the given id."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.String",
+                            "name": "name",
+                            "description": "Parameter id."
+                        }
+                    ],
+                    "name": "GetSpecialTrackParameter",
+                    "return": "com.nolimitscoaster.SpecialTrack",
+                    "accessor": "protected final",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Attempts to retrieve a SpecialTrack parameter, throws an exception if no parameter is found with the given id."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.String",
+                            "name": "name",
+                            "description": "Parameter id."
+                        }
+                    ],
+                    "name": "GetResourcePathParameter",
+                    "return": "com.nolimitscoaster.ResourcePath",
+                    "accessor": "protected final",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Attempts to retrieve a ResourcePath parameter, throws an exception if no parameter is found with the given id."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.String",
+                            "name": "name",
+                            "description": "The id of the SceneObject to fetch."
+                        },
+                        {
+                            "type": "bool",
+                            "name": "throwIfNotFound",
+                            "description": "If true, will raise an error if unable to find a SceneObject."
+                        }
+                    ],
+                    "name": "GetSceneObject",
+                    "return": "com.nolimitscoaster.SceneObject",
+                    "accessor": "public final",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Attempts to fetch a SceneObject with a given name."
+                }
+            ],
+            "constructors": []
+        },
+        {
+            "type": "class",
+            "package": "scripts",
+            "libraries": [
+                "com.nolimitscoaster",
+                "nlvm.math3d",
+                "nlvm.lang.Object",
+                "scripts.utilities",
+                "scripts.containers"
+            ],
+            "accessor": "public",
+            "name": "CoasterBogie",
+            "full_name": "scripts.CoasterBogie",
+            "extends": "Behaviour",
+            "implements": [
+                "ISetableBogie"
+            ],
+            "description": "Type used for custom coaster bogies; Allows customisation of wheel rotation speeds based on the diameter,\\nThis implementation uses the common separated pitch/yaw bogies found on gerst,mack,vekoma.",
+            "members": [],
+            "methods": [],
+            "constructors": []
+        },
+        {
+            "type": "class",
+            "package": "scripts",
+            "libraries": [
+                "com.nolimitscoaster",
+                "nlvm.math3d",
+                "nlvm.lang.Object",
+                "nlvm.util.Vector",
+                "scripts.utilities",
+                "scripts.containers",
+                "scripts.math.Mathf"
+            ],
+            "accessor": "public",
+            "name": "CoasterCar",
+            "full_name": "scripts.CoasterCar",
+            "extends": "Behaviour",
+            "implements": [
+                "ISetableCar"
+            ],
+            "description": "Type used for custom coaster cars; Allows customisation of restraint animations using the descriptor files, has g-force trackers placed for each camera which can be visualised and cameras can be cycled through like in-game counterparts.",
+            "members": [],
+            "methods": [],
+            "constructors": []
+        },
+        {
+            "type": "class",
+            "package": "scripts",
+            "libraries": [
+                "nlvm.lang",
+                "nlvm.math3d.Vector3f"
+            ],
+            "accessor": "public",
+            "name": "CoasterCarDescriptor",
+            "full_name": "scripts.CoasterCarDescriptor",
+            "extends": "Object",
+            "description": "Struct-like container for CoasterCar specific data.",
+            "members": [
+                {
+                    "name": "Restraints",
+                    "type": "int",
+                    "accessor": "public",
+                    "description": "The amount of restrains this car has."
+                },
+                {
+                    "name": "Cameras",
+                    "type": "int",
+                    "accessor": "public",
+                    "description": "The amount of cameras this car has."
+                },
+                {
+                    "name": "RestraintOpenDuration",
+                    "type": "float",
+                    "accessor": "public",
+                    "description": "The time(seconds) for the restraints to open."
+                },
+                {
+                    "name": "RestraintCloseDuration",
+                    "type": "float",
+                    "accessor": "public",
+                    "description": "The time(seconds) for the restraints to close."
+                }
+            ],
+            "methods": [],
+            "constructors": []
+        },
+        {
+            "type": "class",
+            "package": "scripts",
+            "libraries": [
+                "nlvm.lang.String",
+                "nlvm.lang.Object",
+                "nlvm.math3d.Vector3f"
+            ],
+            "accessor": "public",
+            "name": "CoasterWheel",
+            "full_name": "scripts.CoasterWheel",
+            "extends": "Object",
+            "description": "Descriptor for wheels containing basic information.",
+            "members": [
+                {
+                    "name": "WHEEL_FWD",
+                    "type": "int",
+                    "accessor": "public static final",
+                    "description": "Enum for forward wheel rotation (Read Only)."
+                },
+                {
+                    "name": "WHEEL_BWD",
+                    "type": "int",
+                    "accessor": "public static final",
+                    "description": "Enum for backward wheel rotation (Read Only)."
+                },
+                {
+                    "name": "Name",
+                    "type": "String",
+                    "accessor": "public",
+                    "description": "Name of the wheel element."
+                },
+                {
+                    "name": "Radius",
+                    "type": "float",
+                    "accessor": "public",
+                    "description": "Radius(meters) of the wheel."
+                },
+                {
+                    "name": "Direction",
+                    "type": "int",
+                    "accessor": "public",
+                    "description": "Enum for the wheels rotation direction."
+                },
+                {
+                    "name": "Axis",
+                    "type": "Vector3f",
+                    "accessor": "public",
+                    "description": "The axis of rotation of the wheel."
+                }
+            ],
+            "methods": [],
+            "constructors": [
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.String",
+                            "name": "name",
+                            "description": "The SceneObjectElement name of the wheel."
+                        },
+                        {
+                            "type": "float",
+                            "name": "radius",
+                            "description": "The radius(meters) of the wheel."
+                        },
+                        {
+                            "type": "int",
+                            "name": "direction",
+                            "description": "The direction the wheel will rotate."
+                        },
+                        {
+                            "type": "nlvm.math3d.Vector3f",
+                            "name": "axis",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "accessor": "public",
+                    "description": "Creates a new wheel descriptor."
+                }
+            ]
+        },
+        {
+            "type": "class",
+            "package": "scripts.containers",
+            "libraries": [],
+            "accessor": "public final",
+            "name": "Array",
+            "full_name": "scripts.containers.Array",
+            "extends": "Object",
+            "implements": [
+                "IEnumerable",
+                "IQuerySize",
+                "IIndexable"
+            ],
+            "description": "A simple fixed size array.",
+            "members": [],
+            "methods": [
+                {
+                    "args": [],
+                    "name": "Count",
+                    "return": "int",
+                    "accessor": "public",
+                    "return_desc": "The current amount of items in the container.",
+                    "description": "The containers occupancy."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "int",
+                            "name": "index",
+                            "description": "The index to fetch from."
+                        }
+                    ],
+                    "name": "At",
+                    "return": "nlvm.lang.Object",
+                    "accessor": "public",
+                    "return_desc": "The object at a given index.",
+                    "description": "Gets the item at a specified index."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "Index",
+                            "name": "index",
+                            "description": "The index to fetch from."
+                        }
+                    ],
+                    "name": "At",
+                    "return": "nlvm.lang.Object",
+                    "accessor": "public",
+                    "return_desc": "The object at a given index.",
+                    "description": "Gets the item at a specified index."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.Object",
+                            "name": "object",
+                            "description": "The value to set at the given index."
+                        },
+                        {
+                            "type": "int",
+                            "name": "index",
+                            "description": "The index that will be written to."
+                        }
+                    ],
+                    "name": "SetAt",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Sets the item at a specified index."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.Object",
+                            "name": "object",
+                            "description": "The value to set at the given index."
+                        },
+                        {
+                            "type": "Index",
+                            "name": "index",
+                            "description": "The index that will be written to."
+                        }
+                    ],
+                    "name": "SetAt",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Sets the item at a specified index."
+                },
+                {
+                    "args": [],
+                    "name": "ToArray",
+                    "return": "Object[]",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Returns the enumerable as a native array."
+                },
+                {
+                    "args": [],
+                    "name": "GetEnumerator",
+                    "return": "IEnumerator",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Returns the enumerable's enumerator interface."
+                }
+            ],
+            "constructors": [
+                {
+                    "args": [
+                        {
+                            "type": "int",
+                            "name": "size",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "accessor": "public",
+                    "description": "Creates a new array of size."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "IEnumerable",
+                            "name": "enumerable",
+                            "description": "The enumerable container to populate the Array with."
+                        }
+                    ],
+                    "accessor": "public",
+                    "description": "Creates a new array and populates it."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "Object[]",
+                            "name": "array",
+                            "description": "The array to populate the Array with."
+                        }
+                    ],
+                    "accessor": "public",
+                    "description": "Creates a new array and populates it."
+                }
+            ]
+        },
+        {
+            "type": "class",
+            "package": "scripts.containers",
+            "libraries": [],
+            "accessor": "public",
+            "name": "ArrayEnumerator",
+            "full_name": "scripts.containers.ArrayEnumerator",
+            "extends": "Object",
+            "implements": [
+                "IEnumerator"
+            ],
+            "description": "A simple iterator for arrays.",
+            "members": [],
+            "methods": [],
+            "constructors": []
+        },
+        {
+            "type": "interface",
+            "package": "scripts.containers",
+            "libraries": [],
+            "accessor": "public",
+            "name": "IEnumerable",
+            "full_name": "scripts.containers.IEnumerable",
+            "description": "Represents an iterable type.",
+            "members": [],
+            "methods": [
+                {
+                    "args": [],
+                    "name": "ToArray",
+                    "return": "Object[]",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Returns the enumerable as a native array."
+                },
+                {
+                    "args": [],
+                    "name": "GetEnumerator",
+                    "return": "IEnumerator",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Returns the enumerable's enumerator interface."
+                }
+            ],
+            "constructors": []
+        },
+        {
+            "type": "interface",
+            "package": "scripts.containers",
+            "libraries": [],
+            "accessor": "public",
+            "name": "IEnumerator",
+            "full_name": "scripts.containers.IEnumerator",
+            "description": "Represents basic iterative behaviour over a span.",
+            "members": [],
+            "methods": [
+                {
+                    "args": [],
+                    "name": "MoveNext",
+                    "return": "bool",
+                    "accessor": "public",
+                    "return_desc": "True if another element is present, otherwise False.",
+                    "description": "Moves to the next element in the interface."
+                },
+                {
+                    "args": [],
+                    "name": "Reset",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Resets the enumerator to the first element in the sequence."
+                },
+                {
+                    "args": [],
+                    "name": "Get",
+                    "return": "nlvm.lang.Object",
+                    "accessor": "public",
+                    "return_desc": "The current element in the sequence.",
+                    "description": "Gets the element at the current position in the sequence."
+                }
+            ],
+            "constructors": []
+        },
+        {
+            "type": "interface",
+            "package": "scripts.containers",
+            "libraries": [],
+            "accessor": "public",
+            "name": "IIndexable\n",
+            "full_name": "scripts.containers.IIndexable\n",
+            "description": "Exposes methods to index an type.",
+            "members": [],
+            "methods": [
+                {
+                    "args": [
+                        {
+                            "type": "int",
+                            "name": "index",
+                            "description": "The index to fetch from."
+                        }
+                    ],
+                    "name": "At",
+                    "return": "nlvm.lang.Object",
+                    "accessor": "public",
+                    "return_desc": "The object at a given index.",
+                    "description": "Gets the item at a specified index."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "Index",
+                            "name": "index",
+                            "description": "The index to fetch from."
+                        }
+                    ],
+                    "name": "At",
+                    "return": "nlvm.lang.Object",
+                    "accessor": "public",
+                    "return_desc": "The object at a given index.",
+                    "description": "Gets the item at a specified index."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.Object",
+                            "name": "object",
+                            "description": "The value to set at the given index."
+                        },
+                        {
+                            "type": "int",
+                            "name": "index",
+                            "description": "The index that will be written to."
+                        }
+                    ],
+                    "name": "SetAt",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Sets the item at a specified index."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.Object",
+                            "name": "object",
+                            "description": "The value to set at the given index."
+                        },
+                        {
+                            "type": "Index",
+                            "name": "index",
+                            "description": "The index that will be written to."
+                        }
+                    ],
+                    "name": "SetAt",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Sets the item at a specified index."
+                }
+            ],
+            "constructors": []
+        },
+        {
+            "type": "class",
+            "package": "scripts.containers",
+            "libraries": [],
+            "accessor": "public final",
+            "name": "Index",
+            "full_name": "scripts.containers.Index",
+            "extends": "Object",
+            "description": "Struct-like type that simplifies reverse indexing of IIndexable types.",
+            "members": [
+                {
+                    "name": "Index",
+                    "type": "int",
+                    "accessor": "public",
+                    "description": "The index to search for (Read Only)."
+                },
+                {
+                    "name": "Reverse",
+                    "type": "bool",
+                    "accessor": "public",
+                    "description": "If the index should be read from the back of the container."
+                }
+            ],
+            "methods": [
+                {
+                    "args": [
+                        {
+                            "type": "int",
+                            "name": "size",
+                            "description": "The size of the container this Index will be used on."
+                        }
+                    ],
+                    "name": "Get",
+                    "return": "int",
+                    "accessor": "public",
+                    "return_desc": "The true index to search for.",
+                    "description": "Gets the correct index based on the container size."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "int",
+                            "name": "index",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "Front",
+                    "return": "Index",
+                    "accessor": "public static",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Creates an index search forwards."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "int",
+                            "name": "index",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "Back",
+                    "return": "Index",
+                    "accessor": "public static",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Creates an index search backwards."
+                }
+            ],
+            "constructors": []
+        },
+        {
+            "type": "interface",
+            "package": "scripts.containers",
+            "libraries": [],
+            "accessor": "public",
+            "name": "IQuerySize\n",
+            "full_name": "scripts.containers.IQuerySize\n",
+            "description": "Exposes methods to query the size of a container.",
+            "members": [],
+            "methods": [
+                {
+                    "args": [],
+                    "name": "Count",
+                    "return": "int",
+                    "accessor": "public",
+                    "return_desc": "The current amount of items in the container.",
+                    "description": "The containers occupancy."
+                }
+            ],
+            "constructors": []
+        },
+        {
+            "type": "class",
+            "package": "scripts.containers",
+            "libraries": [
+                "nlvm.util.Vector"
+            ],
+            "accessor": "public final",
+            "name": "List",
+            "full_name": "scripts.containers.List",
+            "extends": "Object",
+            "implements": [
+                "IEnumerable",
+                "IQuerySize",
+                "IIndexable"
+            ],
+            "description": "A simple List container with enumerator capabilities.",
+            "members": [],
+            "methods": [
+                {
+                    "args": [],
+                    "name": "Count",
+                    "return": "int",
+                    "accessor": "public",
+                    "return_desc": "The current amount of items in the List.",
+                    "description": "The Lists current occupancy."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.Object",
+                            "name": "object",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "Contains",
+                    "return": "bool",
+                    "accessor": "public",
+                    "return_desc": "True if the supplied object was found, otherwise false.",
+                    "description": "Checks whether a given object is contained in the List."
+                },
+                {
+                    "args": [],
+                    "name": "Clear",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Clears the List and sets its size to zero."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.Object",
+                            "name": "object",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "Insert",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Inserts an object to the back of the List."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.Object",
+                            "name": "object",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "int",
+                            "name": "index",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "InsertAt",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Inserts an object at a specified index."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.Object",
+                            "name": "object",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "Remove",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Removes an object from the List."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "int",
+                            "name": "index",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "RemoveAt",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Removes an object at a specified element."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.Object",
+                            "name": "object",
+                            "description": "The value to set at the given index."
+                        },
+                        {
+                            "type": "int",
+                            "name": "index",
+                            "description": "The index that will be written to."
+                        }
+                    ],
+                    "name": "SetAt",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Sets the item at a specified index."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.Object",
+                            "name": "object",
+                            "description": "The value to set at the given index."
+                        },
+                        {
+                            "type": "Index",
+                            "name": "index",
+                            "description": "The index that will be written to."
+                        }
+                    ],
+                    "name": "SetAt",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Sets the item at a specified index."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "int",
+                            "name": "index",
+                            "description": "The index to fetch from."
+                        }
+                    ],
+                    "name": "At",
+                    "return": "nlvm.lang.Object",
+                    "accessor": "public",
+                    "return_desc": "The object at a given index.",
+                    "description": "Gets the item at a specified index."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "Index",
+                            "name": "index",
+                            "description": "The index to fetch from."
+                        }
+                    ],
+                    "name": "At",
+                    "return": "nlvm.lang.Object",
+                    "accessor": "public",
+                    "return_desc": "The object at a given index.",
+                    "description": "Gets the item at a specified index."
+                },
+                {
+                    "args": [],
+                    "name": "PopBack",
+                    "return": "nlvm.lang.Object",
+                    "accessor": "public",
+                    "return_desc": "The element removed from the List.",
+                    "description": "Removes the very last element from the List and returns it."
+                },
+                {
+                    "args": [],
+                    "name": "PopFront",
+                    "return": "nlvm.lang.Object",
+                    "accessor": "public",
+                    "return_desc": "The element removed from the List.",
+                    "description": "Removes the very first element from the List and returns it."
+                },
+                {
+                    "args": [],
+                    "name": "ToArray",
+                    "return": "Object[]",
+                    "accessor": "public",
+                    "return_desc": "The underlying array of this List.",
+                    "description": "Returns the List as an array."
+                },
+                {
+                    "args": [],
+                    "name": "GetEnumerator",
+                    "return": "IEnumerator",
+                    "accessor": "public",
+                    "return_desc": "The ArrayEnumerator that can be used to iterate over the List.",
+                    "description": "Returns the List's enumerator interface."
+                }
+            ],
+            "constructors": [
+                {
+                    "args": [],
+                    "accessor": "public",
+                    "description": "Creates a new List."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "int",
+                            "name": "capacity",
+                            "description": "The initial capacity the List will consume."
+                        }
+                    ],
+                    "accessor": "public",
+                    "description": "Creates a new List with an initial capacity."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "int",
+                            "name": "capacity",
+                            "description": "The initial capcity the List will consume."
+                        },
+                        {
+                            "type": "int",
+                            "name": "capacityIncrement",
+                            "description": "The size it will grow by when reaching capcity."
+                        }
+                    ],
+                    "accessor": "public",
+                    "description": "Creates a new List with an initial capacity and sizer."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "IEnumerable",
+                            "name": "enumerable",
+                            "description": "An enumerable container that will be used to populate the List."
+                        }
+                    ],
+                    "accessor": "public",
+                    "description": "Creates a new List and populates it with an enumerable."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "Object[]",
+                            "name": "array",
+                            "description": "An array to populate the List with."
+                        }
+                    ],
+                    "accessor": "public",
+                    "description": "Creates a new List and populates it with an array."
+                }
+            ]
+        },
+        {
+            "type": "class",
+            "package": "scripts",
+            "libraries": [
+                "com.nolimitscoaster",
+                "scripts.utilities",
+                "nlvm.math3d",
+                "scripts.math"
+            ],
+            "accessor": "public final",
+            "name": "Debug",
+            "full_name": "scripts.Debug",
+            "extends": "Object",
+            "description": "Allows debugging of scripts.",
+            "members": [],
+            "methods": [
+                {
+                    "args": [
+                        {
+                            "type": "Matrix4x4",
+                            "name": "matrix",
+                            "description": "The matrix to be drawn."
+                        },
+                        {
+                            "type": "float",
+                            "name": "timespan",
+                            "description": "The time(seconds) the matrix will exist for."
+                        }
+                    ],
+                    "name": "DrawMatrix",
+                    "return": "void",
+                    "accessor": "public static",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Draw a Matrix."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "Matrix4x4",
+                            "name": "matrix",
+                            "description": "The matrix to be drawn."
+                        },
+                        {
+                            "type": "float",
+                            "name": "timespan",
+                            "description": "The time(seconds) the matrix will exist for."
+                        },
+                        {
+                            "type": "float",
+                            "name": "size",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "DrawMatrix",
+                    "return": "void",
+                    "accessor": "public static",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Draw a Matrix."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.math3d.Vector3f",
+                            "name": "position",
+                            "description": "The world-space position to place the sphere."
+                        },
+                        {
+                            "type": "float",
+                            "name": "timespan",
+                            "description": "The time(seconds) this sphere will exist for."
+                        }
+                    ],
+                    "name": "DrawSphere",
+                    "return": "void",
+                    "accessor": "public static",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Draw a sphere at a point in space."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.math3d.Vector3f",
+                            "name": "position",
+                            "description": "The world-space position to place the sphere."
+                        },
+                        {
+                            "type": "float",
+                            "name": "timespan",
+                            "description": "The time(seconds) this sphere will exist for."
+                        },
+                        {
+                            "type": "nlvm.math3d.Vector4f",
+                            "name": "color",
+                            "description": "The color of the sphere being drawn."
+                        }
+                    ],
+                    "name": "DrawSphere",
+                    "return": "void",
+                    "accessor": "public static",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Draw a sphere at a point in space."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.math3d.Vector3f",
+                            "name": "position",
+                            "description": "The world-space position to place the sphere."
+                        },
+                        {
+                            "type": "float",
+                            "name": "timespan",
+                            "description": "The time(seconds) this sphere will exist for."
+                        },
+                        {
+                            "type": "nlvm.math3d.Vector4f",
+                            "name": "color",
+                            "description": "The color of the sphere being drawn."
+                        },
+                        {
+                            "type": "float",
+                            "name": "diameter",
+                            "description": "The diameter(meters) of the sphere."
+                        }
+                    ],
+                    "name": "DrawSphere",
+                    "return": "void",
+                    "accessor": "public static",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Draw a sphere at a point in space."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.math3d.Vector3f",
+                            "name": "from",
+                            "description": "Point in world-space."
+                        },
+                        {
+                            "type": "nlvm.math3d.Vector3f",
+                            "name": "to",
+                            "description": "Point in world-space."
+                        },
+                        {
+                            "type": "float",
+                            "name": "timespan",
+                            "description": "The time(seconds) this line will exist for."
+                        }
+                    ],
+                    "name": "DrawLine",
+                    "return": "void",
+                    "accessor": "public static",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Draw a line between two points."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.math3d.Vector3f",
+                            "name": "from",
+                            "description": "Point in world-space."
+                        },
+                        {
+                            "type": "nlvm.math3d.Vector3f",
+                            "name": "to",
+                            "description": "Point in world-space."
+                        },
+                        {
+                            "type": "float",
+                            "name": "timespan",
+                            "description": "The time(seconds) this line will exist for."
+                        },
+                        {
+                            "type": "nlvm.math3d.Vector4f",
+                            "name": "color",
+                            "description": "The color of the line being drawn."
+                        }
+                    ],
+                    "name": "DrawLine",
+                    "return": "void",
+                    "accessor": "public static",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Draw a line between two points."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.math3d.Vector3f",
+                            "name": "from",
+                            "description": "Point in world-space."
+                        },
+                        {
+                            "type": "nlvm.math3d.Vector3f",
+                            "name": "to",
+                            "description": "Point in world-space."
+                        },
+                        {
+                            "type": "float",
+                            "name": "timespan",
+                            "description": "The time(seconds) this line will exist for."
+                        },
+                        {
+                            "type": "nlvm.math3d.Vector4f",
+                            "name": "color",
+                            "description": "The color of the line being drawn."
+                        },
+                        {
+                            "type": "float",
+                            "name": "diameter",
+                            "description": "The thickness(meters) of the line."
+                        }
+                    ],
+                    "name": "DrawLine",
+                    "return": "void",
+                    "accessor": "public static",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Draw a line between two points."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.String",
+                            "name": "obj",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "Print",
+                    "return": "void",
+                    "accessor": "public static final",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Creates a time stamped output to the console."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "float",
+                            "name": "obj",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "Print",
+                    "return": "void",
+                    "accessor": "public static final",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Creates a time stamped output to the console."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "int",
+                            "name": "obj",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "Print",
+                    "return": "void",
+                    "accessor": "public static final",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Creates a time stamped output to the console."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "bool",
+                            "name": "obj",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "Print",
+                    "return": "void",
+                    "accessor": "public static final",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Creates a time stamped output to the console."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "double",
+                            "name": "obj",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "Print",
+                    "return": "void",
+                    "accessor": "public static final",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Creates a time stamped output to the console."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "long",
+                            "name": "obj",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "Print",
+                    "return": "void",
+                    "accessor": "public static final",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Creates a time stamped output to the console."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "char",
+                            "name": "obj",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "Print",
+                    "return": "void",
+                    "accessor": "public static final",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Creates a time stamped output to the console."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.Object",
+                            "name": "obj",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "Print",
+                    "return": "void",
+                    "accessor": "public static final",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Creates a time stamped output to the console."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "Object[]",
+                            "name": "obj",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "Print",
+                    "return": "void",
+                    "accessor": "public static final",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Creates a time stamped output to the console."
+                }
+            ],
+            "constructors": []
+        },
+        {
+            "type": "class",
+            "package": "scripts",
+            "libraries": [
+                "com.nolimitscoaster.SceneObjectElement",
+                "scripts.math.Matrix4x4",
+                "nlvm.math3d.Vector3f",
+                "nlvm.math3d.Vector4f",
+                "scripts.math.Mathf"
+            ],
+            "accessor": "public",
+            "name": "ElementGForceTracker",
+            "full_name": "scripts.ElementGForceTracker",
+            "extends": "GForceTracker",
+            "description": "Proveds G-Force data for a SceneObjectElement.",
+            "members": [],
+            "methods": [],
+            "constructors": [
+                {
+                    "args": [
+                        {
+                            "type": "com.nolimitscoaster.SceneObjectElement",
+                            "name": "element",
+                            "description": "The SceneObjectElement to track G-Forces of."
+                        }
+                    ],
+                    "accessor": "public",
+                    "description": "Creates a new tracker for a SceneObjectElement."
+                }
+            ]
+        },
+        {
+            "type": "class",
+            "package": "scripts",
+            "libraries": [],
+            "accessor": "public final",
+            "name": "Enum",
+            "full_name": "scripts.Enum",
+            "extends": "Object",
+            "description": "Represents a value type.",
+            "members": [],
+            "methods": [
+                {
+                    "args": [
+                        {
+                            "type": "IEnum",
+                            "name": "enum",
+                            "description": "The interface type to use for splitting the flag."
+                        },
+                        {
+                            "type": "int",
+                            "name": "flag",
+                            "description": "The flag enum that will be split."
+                        }
+                    ],
+                    "name": "SplitFlag",
+                    "return": "int[]",
+                    "accessor": "public static final",
+                    "return_desc": "An array of all enum values found within the flag.",
+                    "description": "Splits the flagged enum into its individual counterparts."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "IEnum",
+                            "name": "enum",
+                            "description": "The interface type to use for reading the flag/enum."
+                        },
+                        {
+                            "type": "int",
+                            "name": "flag",
+                            "description": "The flag enum that will be compared to."
+                        },
+                        {
+                            "type": "int",
+                            "name": "value",
+                            "description": "The flag/enum to compare."
+                        }
+                    ],
+                    "name": "Contains",
+                    "return": "bool",
+                    "accessor": "public static final",
+                    "return_desc": "True if the enum/flag was present, otherwise False.",
+                    "description": "Checks to see if an enum/flag is present in another flag."
+                }
+            ],
+            "constructors": []
+        },
+        {
+            "type": "class",
+            "package": "scripts",
+            "libraries": [],
+            "accessor": "public abstract",
+            "name": "Exception",
+            "full_name": "scripts.Exception",
+            "extends": "Object",
+            "description": "Base type for exception handling protocols.",
+            "members": [],
+            "methods": [
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.String",
+                            "name": "message",
+                            "description": "The optional message this can print along with the exception."
+                        }
+                    ],
+                    "name": "Throw",
+                    "return": "void",
+                    "accessor": "public static",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Throws an exception at runtime with a message."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.String",
+                            "name": "typeName",
+                            "description": "The exception type-name that will be displayed as throwing the exception."
+                        },
+                        {
+                            "type": "nlvm.lang.String",
+                            "name": "message",
+                            "description": "The optional message to print with the exception."
+                        }
+                    ],
+                    "name": "CreateThrowMessage",
+                    "return": "nlvm.lang.String",
+                    "accessor": "protected static final",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Creates a formatted exception message."
+                }
+            ],
+            "constructors": []
+        },
+        {
+            "type": "class",
+            "package": "scripts",
+            "libraries": [
+                "nlvm.math3d",
+                "scripts.math",
+                "scripts.containers"
+            ],
+            "accessor": "public",
+            "name": "GForceTracker",
+            "full_name": "scripts.GForceTracker",
+            "extends": "UpdateableObject",
+            "description": "Base type to implement G-Force tracking capabilities.",
+            "members": [],
+            "methods": [
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.math3d.Vector3f",
+                            "name": "outForce",
+                            "description": "The vector to set read-out data to."
+                        }
+                    ],
+                    "name": "GetForce",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Gets the current G-Force read-out."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.math3d.Vector3f",
+                            "name": "outForce",
+                            "description": "The vector to set read-out data to."
+                        }
+                    ],
+                    "name": "GetAverageForce",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Gets the current G-Force read-out, averaged over multiple frames."
+                },
+                {
+                    "args": [],
+                    "name": "ExposeMatrix",
+                    "return": "Matrix4x4",
+                    "accessor": "public final",
+                    "return_desc": "The underlying matrix the tracker uses to calculate forces.",
+                    "description": "Exposes the underlying matrix for manipulation."
+                }
+            ],
+            "constructors": [
+                {
+                    "args": [
+                        {
+                            "type": "Matrix4x4",
+                            "name": "track",
+                            "description": "The matrix to track G-Forces of."
+                        }
+                    ],
+                    "accessor": "public",
+                    "description": "Create a new G-Force tracker, tracking a matrix."
+                }
+            ]
+        },
+        {
+            "type": "class",
+            "package": "scripts",
+            "libraries": [
+                "com.nolimitscoaster.SceneObjectElement",
+                "com.nolimitscoaster.Tools",
+                "nlvm.math3d.Vector3f"
+            ],
+            "accessor": "public",
+            "name": "HingeRestraint",
+            "full_name": "scripts.HingeRestraint",
+            "extends": "Restraint",
+            "description": "Represents a simple hindged rotating restraint.",
+            "members": [],
+            "methods": [],
+            "constructors": [
+                {
+                    "args": [
+                        {
+                            "type": "com.nolimitscoaster.SceneObjectElement",
+                            "name": "restraintElement",
+                            "description": "The SceneObjectElement this restraint will animate."
+                        },
+                        {
+                            "type": "nlvm.math3d.Vector3f",
+                            "name": "closeAngle",
+                            "description": "The angle(radians) of the restraint when closed."
+                        },
+                        {
+                            "type": "nlvm.math3d.Vector3f",
+                            "name": "openAngle",
+                            "description": "The angle(radians) of the restraint when open."
+                        }
+                    ],
+                    "accessor": "public",
+                    "description": "Creates a new HingedRestraint attached to a SceneObjectElement."
+                }
+            ]
+        },
+        {
+            "type": "interface",
+            "package": "scripts",
+            "libraries": [
+                "scripts.containers"
+            ],
+            "accessor": "public",
+            "name": "IEnum\n",
+            "full_name": "scripts.IEnum\n",
+            "description": "Exposes methods for an Object that uses enum style integers.",
+            "members": [
+                {
+                    "name": "ENUM_INVALID",
+                    "type": "String",
+                    "accessor": "public static final",
+                    "description": "Constant used for when a enum parse fails (Read Only)."
+                }
+            ],
+            "methods": [
+                {
+                    "args": [
+                        {
+                            "type": "int",
+                            "name": "enum",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "GetEnumAsString",
+                    "return": "nlvm.lang.String",
+                    "accessor": "public",
+                    "return_desc": "The string representation of the enum.",
+                    "description": "Parses the enum integer into a String representation."
+                },
+                {
+                    "args": [],
+                    "name": "IsFlag",
+                    "return": "bool",
+                    "accessor": "public",
+                    "return_desc": "True if enum is flag, otherwise False.",
+                    "description": "Gets whether the IEnum is a flag or regular enum."
+                }
+            ],
+            "constructors": []
+        },
+        {
+            "type": "interface",
+            "package": "scripts",
+            "libraries": [
+                "nlvm.lang.Object"
+            ],
+            "accessor": "public",
+            "name": "IGetable\n",
+            "full_name": "scripts.IGetable\n",
+            "description": "sExposes methods to get information about an Object.",
+            "members": [],
+            "methods": [
+                {
+                    "args": [],
+                    "name": "GetData",
+                    "return": "nlvm.lang.Object",
+                    "accessor": "public",
+                    "return_desc": "Base type which needs to be cast after calling.",
+                    "description": "Returns data associated with the Object."
+                }
+            ],
+            "constructors": []
+        },
+        {
+            "type": "class",
+            "package": "scripts",
+            "libraries": [
+                "nlvm.lang.System",
+                "nlvm.lang.String"
+            ],
+            "accessor": "public",
+            "name": "InvalidAnimationException",
+            "full_name": "scripts.InvalidAnimationException",
+            "extends": "Exception",
+            "description": "Exception for invalid animations that cannot be used.",
+            "members": [],
+            "methods": [],
+            "constructors": []
+        },
+        {
+            "type": "class",
+            "package": "scripts",
+            "libraries": [
+                "nlvm.lang.System",
+                "nlvm.lang.String"
+            ],
+            "accessor": "public",
+            "name": "InvalidFormatException",
+            "full_name": "scripts.InvalidFormatException",
+            "extends": "Exception",
+            "description": "Exception for when files have invalid formats and cannot be read.",
+            "members": [],
+            "methods": [],
+            "constructors": []
+        },
+        {
+            "type": "interface",
+            "package": "scripts",
+            "libraries": [
+                "nlvm.math3d.Matrix4x4f",
+                "nlvm.lang.Object"
+            ],
+            "accessor": "public",
+            "name": "ISetable\n",
+            "full_name": "scripts.ISetable\n",
+            "description": "Exposes methods for setting data.",
+            "members": [],
+            "methods": [],
+            "constructors": []
+        },
+        {
+            "type": "interface",
+            "package": "scripts",
+            "libraries": [
+                "com.nolimitscoaster.Coaster",
+                "com.nolimitscoaster.Train",
+                "nlvm.math3d.Vector3f"
+            ],
+            "accessor": "public",
+            "name": "ISetableBogie",
+            "full_name": "scripts.ISetableBogie",
+            "extends": "ISetable",
+            "description": "Exposes methods for custom bogies.",
+            "members": [],
+            "methods": [],
+            "constructors": []
+        },
+        {
+            "type": "interface",
+            "package": "scripts",
+            "libraries": [
+                "com.nolimitscoaster.Coaster",
+                "com.nolimitscoaster.Train",
+                "nlvm.math3d.Vector3f"
+            ],
+            "accessor": "public",
+            "name": "ISetableCar",
+            "full_name": "scripts.ISetableCar",
+            "extends": "ISetable",
+            "description": "Exposes methods for custom cars.",
+            "members": [],
+            "methods": [],
+            "constructors": []
+        },
+        {
+            "type": "interface",
+            "package": "scripts",
+            "libraries": [],
+            "accessor": "public",
+            "name": "IUpdateable\n",
+            "full_name": "scripts.IUpdateable\n",
+            "description": "Exposes methods callbacks for recieving updates.",
+            "members": [],
+            "methods": [
+                {
+                    "args": [
+                        {
+                            "type": "float",
+                            "name": "tick",
+                            "description": "The time(seconds) the previous frame took to process."
+                        }
+                    ],
+                    "name": "Update",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Called each frame."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "float",
+                            "name": "tick",
+                            "description": "The time(seconds) the previous frame took to process."
+                        }
+                    ],
+                    "name": "LateUpdate",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Called each frame after all Updates have been called."
+                }
+            ],
+            "constructors": []
+        },
+        {
+            "type": "class",
+            "package": "scripts",
+            "libraries": [
+                "scripts.containers",
+                "scripts.utilities"
+            ],
+            "accessor": "public final",
+            "name": "Json",
+            "full_name": "scripts.Json",
+            "extends": "Object",
+            "implements": [
+                "IEnumerable",
+                "IIndexable",
+                "IQuerySize",
+                "IEnum"
+            ],
+            "description": "Json parser and traverser.",
+            "members": [
+                {
+                    "name": "TYPE_OBJECT",
+                    "type": "int",
+                    "accessor": "public static final",
+                    "description": "Enum constant for json holding an Object (Read Only)."
+                },
+                {
+                    "name": "TYPE_ARRAY",
+                    "type": "int",
+                    "accessor": "public static final",
+                    "description": "Enum constant for json holding an Array (Read Only)."
+                },
+                {
+                    "name": "TYPE_STRING",
+                    "type": "int",
+                    "accessor": "public static final",
+                    "description": "Enum constant for json holding an String (Read Only)."
+                },
+                {
+                    "name": "TYPE_NUMBER",
+                    "type": "int",
+                    "accessor": "public static final",
+                    "description": "Enum constant for json holding an Number (Read Only)."
+                },
+                {
+                    "name": "TYPE_BOOL",
+                    "type": "int",
+                    "accessor": "public static final",
+                    "description": "Enum constant for json holding an Bool (Read Only)."
+                }
+            ],
+            "methods": [
+                {
+                    "args": [],
+                    "name": "GetString",
+                    "return": "nlvm.lang.String",
+                    "accessor": "public",
+                    "return_desc": "The string value, will throw exception if unable to find a string.",
+                    "description": "Attempts to fetch the string value stored in this object."
+                },
+                {
+                    "args": [],
+                    "name": "GetBool",
+                    "return": "bool",
+                    "accessor": "public",
+                    "return_desc": "The bool value, will throw exception if unable to find a bool.",
+                    "description": "Attempts to fetch the bool value stored in this object."
+                },
+                {
+                    "args": [],
+                    "name": "GetFloat",
+                    "return": "float",
+                    "accessor": "public",
+                    "return_desc": "The float value, will throw exception if unable to find a float.",
+                    "description": "Attempts to fetch the float value stored in this object."
+                },
+                {
+                    "args": [],
+                    "name": "GetInt",
+                    "return": "int",
+                    "accessor": "public",
+                    "return_desc": "The integer value, will throw exception if unable to find a integer.",
+                    "description": "Attempts to fetch the integer value stored in this object, performs truncation if value has a decimal."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.String",
+                            "name": "key",
+                            "description": "The key used to search."
+                        }
+                    ],
+                    "name": "Get",
+                    "return": "Json",
+                    "accessor": "public",
+                    "return_desc": "The json object found at the key entry.",
+                    "description": "Attempts to retrieve a json entry using a key."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.String",
+                            "name": "key",
+                            "description": "The key used to search."
+                        }
+                    ],
+                    "name": "HasKey",
+                    "return": "bool",
+                    "accessor": "public",
+                    "return_desc": "True if the key is found, otherwise False.",
+                    "description": "Checks whether the json object has a specific key."
+                },
+                {
+                    "args": [],
+                    "name": "Count",
+                    "return": "int",
+                    "accessor": "public",
+                    "return_desc": "The current amount of items in the container.",
+                    "description": "The containers occupancy."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "int",
+                            "name": "index",
+                            "description": "The index to fetch from."
+                        }
+                    ],
+                    "name": "At",
+                    "return": "nlvm.lang.Object",
+                    "accessor": "public",
+                    "return_desc": "The object at a given index.",
+                    "description": "Gets the item at a specified index."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "Index",
+                            "name": "index",
+                            "description": "The index to fetch from."
+                        }
+                    ],
+                    "name": "At",
+                    "return": "nlvm.lang.Object",
+                    "accessor": "public",
+                    "return_desc": "The object at a given index.",
+                    "description": "Gets the item at a specified index."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.Object",
+                            "name": "object",
+                            "description": "The value to set at the given index."
+                        },
+                        {
+                            "type": "int",
+                            "name": "index",
+                            "description": "The index that will be written to."
+                        }
+                    ],
+                    "name": "SetAt",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Sets the item at a specified index."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.Object",
+                            "name": "object",
+                            "description": "The value to set at the given index."
+                        },
+                        {
+                            "type": "Index",
+                            "name": "index",
+                            "description": "The index that will be written to."
+                        }
+                    ],
+                    "name": "SetAt",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Sets the item at a specified index."
+                },
+                {
+                    "args": [],
+                    "name": "ToArray",
+                    "return": "Object[]",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Returns the enumerable as a native array."
+                },
+                {
+                    "args": [],
+                    "name": "GetEnumerator",
+                    "return": "IEnumerator",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Returns the enumerable's enumerator interface."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.lang.String",
+                            "name": "text",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "Parse",
+                    "return": "Json",
+                    "accessor": "public static",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Attempts to parse a string into a json tree."
+                },
+                {
+                    "args": [],
+                    "name": "toString",
+                    "return": "nlvm.lang.String",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Gets the string representation of this object."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "int",
+                            "name": "enum",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "GetEnumAsString",
+                    "return": "nlvm.lang.String",
+                    "accessor": "public",
+                    "return_desc": "The string representation of the enum.",
+                    "description": "Parses the enum integer into a String representation."
+                },
+                {
+                    "args": [],
+                    "name": "IsFlag",
+                    "return": "bool",
+                    "accessor": "public",
+                    "return_desc": "True if enum is flag, otherwise False.",
+                    "description": "Gets whether the IEnum is a flag or regular enum."
+                }
+            ],
+            "constructors": []
+        },
+        {
+            "type": "class",
+            "package": "scripts.math",
+            "libraries": [
+                "nlvm.lang.Math"
+            ],
+            "accessor": "public final",
+            "name": "Mathf\n",
+            "full_name": "scripts.math.Mathf\n",
+            "description": "Math library.",
+            "members": [
+                {
+                    "name": "PI",
+                    "type": "float",
+                    "accessor": "public static final",
+                    "description": "The PI constant."
+                },
+                {
+                    "name": "TAU",
+                    "type": "float",
+                    "accessor": "public static final",
+                    "description": "The Tau constant."
+                },
+                {
+                    "name": "DegToRad",
+                    "type": "float",
+                    "accessor": "public static final",
+                    "description": "Constant for converting degrees to radians."
+                },
+                {
+                    "name": "RadToDeg",
+                    "type": "float",
+                    "accessor": "public static final",
+                    "description": "Constant for converting radians to degrees."
+                }
+            ],
+            "methods": [
+                {
+                    "args": [
+                        {
+                            "type": "float",
+                            "name": "t",
+                            "description": "The value within the range."
+                        },
+                        {
+                            "type": "float",
+                            "name": "minA",
+                            "description": "The minimum of the initial range."
+                        },
+                        {
+                            "type": "float",
+                            "name": "maxA",
+                            "description": "The maximum of the initial range."
+                        },
+                        {
+                            "type": "float",
+                            "name": "minB",
+                            "description": "The minimum of the range converting to."
+                        },
+                        {
+                            "type": "float",
+                            "name": "maxB",
+                            "description": "The maximum of the range converting to."
+                        }
+                    ],
+                    "name": "Remap",
+                    "return": "float",
+                    "accessor": "public static",
+                    "return_desc": "The input value mapped to the new range.",
+                    "description": "Remap a float from one range to another."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "float",
+                            "name": "min",
+                            "description": "The minimum of the random range."
+                        },
+                        {
+                            "type": "float",
+                            "name": "max",
+                            "description": "The maximum of the random range."
+                        }
+                    ],
+                    "name": "Random",
+                    "return": "float",
+                    "accessor": "public static",
+                    "return_desc": "The generated random number.",
+                    "description": "Creates a pseudo-random number."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "int",
+                            "name": "min",
+                            "description": "The minimum of the random range."
+                        },
+                        {
+                            "type": "int",
+                            "name": "max",
+                            "description": "The maximum of the random range."
+                        }
+                    ],
+                    "name": "Random",
+                    "return": "int",
+                    "accessor": "public static",
+                    "return_desc": "The generated random number.",
+                    "description": "Creates a pseudo-random number."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "float",
+                            "name": "t",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "Clamp01",
+                    "return": "float",
+                    "accessor": "public static",
+                    "return_desc": "The clamped value.",
+                    "description": "Clamps the value between 0-1."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "int",
+                            "name": "t",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "Clamp01",
+                    "return": "int",
+                    "accessor": "public static",
+                    "return_desc": "The clamped value.",
+                    "description": "Clamps the value between 0-1."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "float",
+                            "name": "t",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "float",
+                            "name": "min",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "float",
+                            "name": "max",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "Clamp",
+                    "return": "float",
+                    "accessor": "public static",
+                    "return_desc": "The clamped value.",
+                    "description": "Clamps the value between a range."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "int",
+                            "name": "t",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "int",
+                            "name": "min",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "int",
+                            "name": "max",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "Clamp",
+                    "return": "int",
+                    "accessor": "public static",
+                    "return_desc": "The clamped value.",
+                    "description": "Clamps the value between a range."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "float",
+                            "name": "a",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "float",
+                            "name": "b",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "Min",
+                    "return": "float",
+                    "accessor": "public static",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Gets the minimum of two values."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "int",
+                            "name": "a",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "int",
+                            "name": "b",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "Min",
+                    "return": "int",
+                    "accessor": "public static",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Gets the minimum of two values."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "float",
+                            "name": "a",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "float",
+                            "name": "b",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "Max",
+                    "return": "float",
+                    "accessor": "public static",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Gets the maximum of two values."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "int",
+                            "name": "a",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "int",
+                            "name": "b",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "Max",
+                    "return": "int",
+                    "accessor": "public static",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Gets the maximum of two values."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "float",
+                            "name": "t",
+                            "description": "The value to perform the operation on."
+                        }
+                    ],
+                    "name": "Ceiling",
+                    "return": "float",
+                    "accessor": "public static",
+                    "return_desc": "The value rounded to the ceiling.",
+                    "description": "Gets the ceiling of a given value."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "float",
+                            "name": "t",
+                            "description": "The value to perform the operation on."
+                        }
+                    ],
+                    "name": "Floor",
+                    "return": "float",
+                    "accessor": "public static",
+                    "return_desc": "The value rounded to the floor.",
+                    "description": "Gets the floor of a given value."
+                }
+            ],
+            "constructors": []
+        },
+        {
+            "type": "class",
+            "package": "scripts.math",
+            "libraries": [
+                "nlvm.math3d",
+                "com.nolimitscoaster.Tools"
+            ],
+            "accessor": "public final",
+            "name": "Matrix4x4",
+            "full_name": "scripts.math.Matrix4x4",
+            "extends": "Object",
+            "description": "A wrapper for the native Matrix4x4f type with some extra QoL methods.",
+            "members": [
+                {
+                    "name": "A1",
+                    "type": "int",
+                    "accessor": "public static final",
+                    "description": "Collumn 1, Row 1."
+                },
+                {
+                    "name": "A2",
+                    "type": "int",
+                    "accessor": "public static final",
+                    "description": "Collumn 2, Row 1."
+                },
+                {
+                    "name": "A3",
+                    "type": "int",
+                    "accessor": "public static final",
+                    "description": "Collumn 3, Row 1."
+                },
+                {
+                    "name": "A4",
+                    "type": "int",
+                    "accessor": "public static final",
+                    "description": "Collumn 4, Row 1."
+                },
+                {
+                    "name": "B1",
+                    "type": "int",
+                    "accessor": "public static final",
+                    "description": "Collumn 1, Row 2."
+                },
+                {
+                    "name": "B2",
+                    "type": "int",
+                    "accessor": "public static final",
+                    "description": "Collumn 2, Row 2."
+                },
+                {
+                    "name": "B3",
+                    "type": "int",
+                    "accessor": "public static final",
+                    "description": "Collumn 3, Row 2."
+                },
+                {
+                    "name": "B4",
+                    "type": "int",
+                    "accessor": "public static final",
+                    "description": "Collumn 4, Row 2."
+                },
+                {
+                    "name": "C1",
+                    "type": "int",
+                    "accessor": "public static final",
+                    "description": "Collumn 1, Row 3."
+                },
+                {
+                    "name": "C2",
+                    "type": "int",
+                    "accessor": "public static final",
+                    "description": "Collumn 2, Row 3."
+                },
+                {
+                    "name": "C3",
+                    "type": "int",
+                    "accessor": "public static final",
+                    "description": "Collumn 3 Row 3."
+                },
+                {
+                    "name": "C4",
+                    "type": "int",
+                    "accessor": "public static final",
+                    "description": "Collumn 4, Row 3."
+                },
+                {
+                    "name": "D1",
+                    "type": "int",
+                    "accessor": "public static final",
+                    "description": "Collumn 1, Row 4."
+                },
+                {
+                    "name": "D2",
+                    "type": "int",
+                    "accessor": "public static final",
+                    "description": "Collumn 2, Row 4."
+                },
+                {
+                    "name": "D3",
+                    "type": "int",
+                    "accessor": "public static final",
+                    "description": "Collumn 3, Row 4."
+                },
+                {
+                    "name": "D4",
+                    "type": "int",
+                    "accessor": "public static final",
+                    "description": "Collumn 4, Row 4."
+                }
+            ],
+            "methods": [
+                {
+                    "args": [
+                        {
+                            "type": "float",
+                            "name": "x",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "float",
+                            "name": "y",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "float",
+                            "name": "z",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "AsTranslation",
+                    "return": "Matrix4x4",
+                    "accessor": "public static",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Creates a new transform Matrix4x4."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "float",
+                            "name": "x",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "float",
+                            "name": "y",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "float",
+                            "name": "z",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "AsRotation",
+                    "return": "Matrix4x4",
+                    "accessor": "public static",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Creates a new rotation Matrix4x4."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "float",
+                            "name": "x",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "float",
+                            "name": "y",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "float",
+                            "name": "z",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "AsScale",
+                    "return": "Matrix4x4",
+                    "accessor": "public static",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Creates a new scale Matrix4x4."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.math3d.Vector3f",
+                            "name": "outPosition",
+                            "description": "The Vector3f that will be written to."
+                        }
+                    ],
+                    "name": "GetPosition",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Returns this Matrix4x4's position."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.math3d.Vector3f",
+                            "name": "position",
+                            "description": "The Vector3f position to copy."
+                        }
+                    ],
+                    "name": "SetPosition",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Sets this Matrix4x4's position."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "Matrix4x4",
+                            "name": "left",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "LeftMultiply",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Performs a left multiplication."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "Matrix4x4",
+                            "name": "right",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "RightMultiply",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Performs a right multiplication."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.math3d.Vector3f",
+                            "name": "vector",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "TransformVector3Zero",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Transforms the vector by the matrix with the virtual 4th component being 0."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.math3d.Vector3f",
+                            "name": "vector",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "TransformVector3One",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Transforms the vector by the matrix with the virtual 4th component being 1."
+                },
+                {
+                    "args": [],
+                    "name": "Invert",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Inverts the matrix."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "Matrix4x4",
+                            "name": "copy",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "Set",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Sets this matrix as a copy."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.math3d.Matrix4x4f",
+                            "name": "copy",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "Set",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Sets this matrix as a copy."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "int",
+                            "name": "collumn",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "int",
+                            "name": "row",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "float",
+                            "name": "value",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "Set",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Sets this matrix component."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "int",
+                            "name": "index",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "float",
+                            "name": "value",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "Set",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Sets this matrix component using the index."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "float",
+                            "name": "t",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "Matrix4x4",
+                            "name": "in",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "Matrix4x4",
+                            "name": "out",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "Lerp",
+                    "return": "Matrix4x4",
+                    "accessor": "public static",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Interpolate between two matrices."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.math3d.Matrix4x4f",
+                            "name": "nativeMatrix",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "FromNative",
+                    "return": "Matrix4x4",
+                    "accessor": "public static",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Creates a Matrix4x4 from the native Matrix4x4f type."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "nlvm.math3d.Matrix4x4f",
+                            "name": "outMatrix",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "name": "GetNative",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Returns the matrix as athe native Matrix4x4f type."
+                }
+            ],
+            "constructors": [
+                {
+                    "args": [],
+                    "accessor": "public",
+                    "description": "Creates a new Matrix4x4 instance initialised to identity."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "Matrix4x4",
+                            "name": "copy",
+                            "description": "The Matrix4x4 to copy across."
+                        }
+                    ],
+                    "accessor": "public",
+                    "description": "Creates a new Matrix4x4 instance as a copy."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "float",
+                            "name": "a1",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "float",
+                            "name": "a2",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "float",
+                            "name": "a3",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "float",
+                            "name": "a4",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "float",
+                            "name": "b1",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "float",
+                            "name": "b2",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "float",
+                            "name": "b3",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "float",
+                            "name": "b4",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "float",
+                            "name": "c1",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "float",
+                            "name": "c2",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "float",
+                            "name": "c3",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "float",
+                            "name": "c4",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "float",
+                            "name": "d1",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "float",
+                            "name": "d2",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "float",
+                            "name": "d3",
+                            "description": "No Description Supplied."
+                        },
+                        {
+                            "type": "float",
+                            "name": "d4",
+                            "description": "No Description Supplied."
+                        }
+                    ],
+                    "accessor": "public",
+                    "description": "Creates a new Matrix4x4 instance."
+                }
+            ]
+        },
+        {
+            "type": "class",
+            "package": "scripts.modifiers",
+            "libraries": [
+                "scripts.ISetableBogie",
+                "nlvm.math3d"
+            ],
+            "accessor": "public",
+            "name": "BogieModifierData",
+            "full_name": "scripts.modifiers.BogieModifierData",
+            "extends": "Object",
+            "description": "A struct-like class which contains data for a bogie.",
+            "members": [
+                {
+                    "name": "SetableBogie",
+                    "type": "ISetableBogie",
+                    "accessor": "public",
+                    "description": "A reference to the ISetableBogie instance this is for."
+                },
+                {
+                    "name": "CarMatrix",
+                    "type": "Matrix4x4f",
+                    "accessor": "public",
+                    "description": "A reference to the underlying car matrix this bogie is attached to."
+                },
+                {
+                    "name": "BogieMatrix",
+                    "type": "Matrix4x4f",
+                    "accessor": "public",
+                    "description": "A reference to the underlying bogie matrix."
+                },
+                {
+                    "name": "TrainDistance",
+                    "type": "float",
+                    "accessor": "public",
+                    "description": "The current distance(meters) the train has travelled."
+                },
+                {
+                    "name": "BogieOffset",
+                    "type": "float",
+                    "accessor": "public",
+                    "description": "The offset(meters) from the underlying cars track position (not implemented)."
+                },
+                {
+                    "name": "WheelRotation",
+                    "type": "float",
+                    "accessor": "public",
+                    "description": "The wheel rotation(radians)."
+                }
+            ],
+            "methods": [],
+            "constructors": []
+        },
+        {
+            "type": "class",
+            "package": "scripts.modifiers",
+            "libraries": [
+                "scripts.ISetableCar",
+                "nlvm.math3d"
+            ],
+            "accessor": "public",
+            "name": "CarModifierData",
+            "full_name": "scripts.modifiers.CarModifierData",
+            "description": "A struct-like class which contains data for a car.",
+            "members": [
+                {
+                    "name": "SetableCar",
+                    "type": "ISetableCar",
+                    "accessor": "public",
+                    "description": "A reference to the ISetableCar instance this is for."
+                },
+                {
+                    "name": "CarMatrix",
+                    "type": "Matrix4x4f",
+                    "accessor": "public",
+                    "description": "A reference to the underlying car matrix."
+                },
+                {
+                    "name": "TrainDistance",
+                    "type": "float",
+                    "accessor": "public",
+                    "description": "The current distance(meters) the train has travelled."
+                },
+                {
+                    "name": "CarOffset",
+                    "type": "float",
+                    "accessor": "public",
+                    "description": "The offset(meters) from the underlying cars track position (not implemented)."
+                }
+            ],
+            "methods": [],
+            "constructors": []
+        },
+        {
+            "type": "interface",
+            "package": "scripts.modifiers",
+            "libraries": [],
+            "accessor": "public",
+            "name": "IBogieModifier\n",
+            "full_name": "scripts.modifiers.IBogieModifier\n",
+            "description": "Exposes methods for manipulating a custom coaster bogies.",
+            "members": [],
+            "methods": [
+                {
+                    "args": [
+                        {
+                            "type": "BogieModifierData",
+                            "name": "bogieData",
+                            "description": "Contains data about the current bogie being manipulated."
+                        }
+                    ],
+                    "name": "Run",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Called to update the bogies data."
+                }
+            ],
+            "constructors": []
+        },
+        {
+            "type": "interface",
+            "package": "scripts.modifiers",
+            "libraries": [],
+            "accessor": "public",
+            "name": "ICarModifier\n",
+            "full_name": "scripts.modifiers.ICarModifier\n",
+            "description": "Exposes methods for manipulating ",
+            "members": [],
+            "methods": [
+                {
+                    "args": [
+                        {
+                            "type": "CarModifierData",
+                            "name": "carData",
+                            "description": "Contains data about the current car being manipulated."
+                        }
+                    ],
+                    "name": "Run",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Called to update the cars data."
+                }
+            ],
+            "constructors": []
+        },
+        {
+            "type": "class",
+            "package": "scripts",
+            "libraries": [
+                "nlvm.lang.System",
+                "nlvm.lang.String"
+            ],
+            "accessor": "public",
+            "name": "NullReferenceException",
+            "full_name": "scripts.NullReferenceException",
+            "extends": "Exception",
+            "description": "Exception for null objects.",
+            "members": [],
+            "methods": [],
+            "constructors": []
+        },
+        {
+            "type": "class",
+            "package": "scripts",
+            "libraries": [
+                "com.nolimitscoaster.SceneObjectElement",
+                "scripts.math.Mathf"
+            ],
+            "accessor": "public abstract",
+            "name": "Restraint",
+            "full_name": "scripts.Restraint",
+            "extends": "UpdateableObject",
+            "description": "Base class for restraints to inherit from for animating.",
+            "members": [
+                {
+                    "name": "OpeningTime",
+                    "type": "float",
+                    "accessor": "public",
+                    "description": "The time taken for the restraint to fully open."
+                },
+                {
+                    "name": "ClosingTime",
+                    "type": "float",
+                    "accessor": "public",
+                    "description": "The time taken for the restraint to fully close."
+                },
+                {
+                    "name": "DelayDeviation",
+                    "type": "float",
+                    "accessor": "public",
+                    "description": "The deviation(seconds) this restraint could have before beginning animation."
+                }
+            ],
+            "methods": [
+                {
+                    "args": [],
+                    "name": "Open",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Begins opening the restraint."
+                },
+                {
+                    "args": [],
+                    "name": "Close",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Begins closing the restraint."
+                },
+                {
+                    "args": [
+                        {
+                            "type": "float",
+                            "name": "activation",
+                            "description": "The current restraint activation 0 being closed, 1 fully open."
+                        }
+                    ],
+                    "name": "OnRestraintUpdate",
+                    "return": "void",
+                    "accessor": "protected abstract",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Called each frame the restraint is updating."
+                }
+            ],
+            "constructors": [
+                {
+                    "args": [
+                        {
+                            "type": "com.nolimitscoaster.SceneObjectElement",
+                            "name": "restraintElement",
+                            "description": "The SceneObjectElement this restraint will animate."
+                        }
+                    ],
+                    "accessor": "public",
+                    "description": "Creates a new Restraint attached to a SceneObjectElement."
+                }
+            ]
+        },
+        {
+            "type": "class",
+            "package": "scripts",
+            "libraries": [
+                "com.nolimitscoaster"
+            ],
+            "accessor": "public final",
+            "name": "Timer",
+            "full_name": "scripts.Timer",
+            "extends": "Object",
+            "implements": [
+                "com.nolimitscoaster.FrameListener"
+            ],
+            "description": "A class that allows for basic timer functionality.",
+            "members": [],
+            "methods": [
+                {
+                    "args": [],
+                    "name": "Start",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Begins the timer."
+                },
+                {
+                    "args": [],
+                    "name": "Stop",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Stops the timer."
+                },
+                {
+                    "args": [],
+                    "name": "Reset",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Resets the timer to its initial state."
+                },
+                {
+                    "args": [],
+                    "name": "StopAndReset",
+                    "return": "void",
+                    "accessor": "public",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Stops and resets the timer."
+                },
+                {
+                    "args": [],
+                    "name": "WaitForComplete",
+                    "return": "bool",
+                    "accessor": "public",
+                    "return_desc": "True if timer has not completed, otherwise False.",
+                    "description": "Gets the current state of the timer."
+                },
+                {
+                    "args": [],
+                    "name": "IsRunning",
+                    "return": "bool",
+                    "accessor": "public",
+                    "return_desc": "True if the timer is running, otherwise False.",
+                    "description": "Gets the current running state of the timer."
+                },
+                {
+                    "args": [],
+                    "name": "GetTime",
+                    "return": "float",
+                    "accessor": "public",
+                    "return_desc": "The amount of time(seconds) elapsed.",
+                    "description": "Gets the current time elapsed."
+                },
+                {
+                    "args": [],
+                    "name": "GetTimePercent",
+                    "return": "float",
+                    "accessor": "public",
+                    "return_desc": "The time represented as a percentage (0-1).",
+                    "description": "Gets the current time as a percentage."
+                }
+            ],
+            "constructors": [
+                {
+                    "args": [
+                        {
+                            "type": "float",
+                            "name": "timespan",
+                            "description": "The time-span(seconds) the timer will run for."
+                        }
+                    ],
+                    "accessor": "public",
+                    "description": "Creates a new Timer with a specific timespan."
+                }
+            ]
+        },
+        {
+            "type": "class",
+            "package": "scripts",
+            "libraries": [],
+            "accessor": "public abstract",
+            "name": "UpdateableObject",
+            "full_name": "scripts.UpdateableObject",
+            "extends": "Object",
+            "implements": [
+                "IUpdateable"
+            ],
+            "description": "Base type for recieving update events without extending Behaviour.",
+            "members": [],
+            "methods": [
+                {
+                    "args": [
+                        {
+                            "type": "bool",
+                            "name": "shouldUpdate",
+                            "description": "True to recieve update events, False to cancel them."
+                        }
+                    ],
+                    "name": "SetShouldUpdate",
+                    "return": "void",
+                    "accessor": "protected final",
+                    "return_desc": "No Description Supplied.",
+                    "description": "Sets if this object should recieve update events."
+                }
+            ],
+            "constructors": []
+        }
+    ]
+}

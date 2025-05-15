@@ -5,6 +5,13 @@
     justify-content: space-between;
     align-items: center;
 }
+.flex-container-row-nowrap-spacebetween-start {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   justify-content: space-between;
+   align-items:start;
+}
 .flex-container-row-nowrap-start-center {
    display: flex;
    flex-direction: row;
@@ -44,8 +51,15 @@
    display: flex;
    flex-direction: column;
    flex-wrap: nowrap;
-   justify-content: flex-start;
+   justify-content: start;
    align-items: center; 
+}
+ .flex-container-collumn-nowrap-start-start {
+   display: flex;
+   flex-direction: column;
+   flex-wrap: nowrap;
+   justify-content: flex-start;
+   align-items: start; 
 }
 .flex-container-column-wrap-center-start {
    display: flex;

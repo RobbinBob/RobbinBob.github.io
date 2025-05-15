@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>        
+        <style>
+            .item {
+                width: 100%;
+                min-height: 125px;
+                max-height: 600px;
+            }
+            .item-wrapper {
+                position: relative;
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                background-position: center;
+                background-size: cover;
+            }
+            .item-wrapper img {
+                height: 25vh;
+                width: auto;
+            }
+            .item-wrapper h1 {
+                flex-grow: 1;
+                font-size: 450%;
+            }
+            .item-wrapper:hover h1 {
+                text-decoration: underline;
+            }
+            .item-wrapper div {
+                opacity: 0;
+                background-color: #ffffff62;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                transition: opacity 0.3s ease;
+            }
+            .item-wrapper:hover div {
+                opacity: 0.5;
+            }
+        </style>
+        <link rel="icon" href="/src/images/Goat.png">
+        <link rel="canonical" href="/projects/nolimits">
+
+        <link rel="stylesheet" href="/src/styles/global.css">
+        <link rel="stylesheet" href="/src/styles/figtree.css">
+        <link rel="stylesheet" href="/src/styles/flex.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+        <script src="/src/scripts/elements.js"></script>
+        <script src="/src/scripts/spacer.js"></script>
+        <script src="/src/scripts/dropdown.js"></script>
+    </head>
+    <body class="figtree">
+        <header id="header"></header>
+        <div class="flex-container-row-nowrap-center-center" style="z-index: 5; background-image: url(/src/images/chun1.png); background-position: center; background-size: cover; width: 100%; min-height: 200px; max-height: 600px;">
+            <h1 style="font-size: 450%;">NOLIMITS2</h1>
+        </div>
+        <main class="flex-container-collumn-nowrap-center-center" style="width: 100%; height: auto; overflow: hidden;">
+            <custom-spacer></custom-spacer>
+            <div class="flex-container-row-nowrap-center-center" style="width: 100%; height: auto;">
+                <a class="item">
+                    <div class="flex-container-row-nowrap-spacebetween-center item-wrapper" style="flex-grow: 1; background-image: url(/src/images/chun4.png); background-position: center; background-size: cover; height: 600px;">
+                        <h1 style="text-align: center;">PARKS</h1>
+                        <div style="background-image: url(/src/images/Constructor.png); background-color: #ffffff00;"></div>
+                    </div>
+                </a>
+                <a href="nlvmcore" class="item">
+                    <div class="flex-container-row-nowrap-spacebetween-center item-wrapper" style="flex-grow: 1; background-image: url(/src/images/CodeSnippet.png); background-position: center; background-size: cover; height: 600px">
+                        <h1 style="text-align: center;">NLVMCore</h1>
+                        <!--<div style="background-image: url(/src/images/Constructor.png); background-color: #ffffff00;"></div>-->
+                    </div>
+                </a>
+            </div>
+        </main>
+        <footer id="footer"></footer>
+    </body>
+</html>

@@ -55,6 +55,13 @@
         <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
         <script src="/src/scripts/elements.js"></script>
         <script src="/src/scripts/spacer.js"></script>
+        <script src="/src/scripts/dropdown.js"></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/a11y-dark.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/csharp.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
     </head>
     <body class="figtree">
         <header id="header"></header>
@@ -110,6 +117,14 @@
                 <a href="https://github.com/RobbinBob/Parkitect-Modded-FlatRides" style="text-decoration: underline; color: #ffffff">
                     <h2>FlatRideUtility</h2>
                 </a>
+                <custom-dropdown title="View Sample" speed="0.5s">
+                        <pre>
+                            <code>
+FlatRideBinder binder = new FlatRideBinder("Hello");
+binder.RegisterFlatRide&lt;FlatRide&gt;();
+                            </code>
+                        </pre>
+                </custom-dropdown>
             </div>
         </main>
         <footer id="footer"></footer>
