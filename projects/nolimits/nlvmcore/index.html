@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NLVMCore</title>        
+        <style>
+            .item {
+                width: 100%;
+                min-height: 125px;
+                max-height: 600px;
+            }
+            .item-wrapper {
+                position: relative;
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                background-position: center;
+                background-size: cover;
+            }
+            .item-wrapper img {
+                height: 25vh;
+                width: auto;
+            }
+            .item-wrapper h1 {
+                flex-grow: 1;
+                font-size: 450%;
+            }
+            .item-wrapper:hover h1 {
+                text-decoration: underline;
+            }
+            .item-wrapper div {
+                opacity: 0;
+                background-color: #ffffff62;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                transition: opacity 0.3s ease;
+            }
+            .item-wrapper:hover div {
+                opacity: 0.5;
+            }
+        </style>
+        <link rel="icon" href="/src/images/Goat.png">
+        <link rel="canonical" href="/projects/nolimits/nlvmcore/index">
+
+        <link rel="stylesheet" href="/src/styles/global.css">
+        <link rel="stylesheet" href="/src/styles/figtree.css">
+        <link rel="stylesheet" href="/src/styles/flex.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+        <script src="/src/scripts/elements.js"></script>
+        <script src="/src/scripts/spacer.js"></script>
+        <script src="/src/scripts/dropdown.js"></script>
+    </head>
+    <body class="figtree">
+        <header id="header"></header>
+        <div class="flex-container-row-nowrap-center-center" style="z-index: 5; background-image: url(/src/images/CodeSnippet.png); background-position: center; background-size: cover; width: 100%; min-height: 200px; max-height: 600px;">
+            <h1 style="font-size: 450%;">NLVMCore</h1>
+        </div>
+        <main class="flex-container-collumn-nowrap-center-center" style="width: auto; height: auto; overflow: hidden; padding-left: 10%; padding-right: 10%;">
+            <div class="flex-container-row-nowrap-center-center" style="width: 100%; background-color: rgba(0, 0, 0, 0.247); padding-left: 10%; padding-right: 10%; max-width: 1500px;">
+                <div class="flex-container-collumn-nowrap-start-start" style="flex-grow: 0; flex-shrink: 1;">
+                    <h2>Motivations</h2>
+                    <p>
+                        It's not news that the built in API kinda sucks... It's been stuck in the old Java ways for a long time now, and lacks some much needed QoL features. This is where NLVMCore API helps to fill in the gaps and make coding more straight-forward!
+                    </p>
+                </div>
+                <div class="flex-container-row-nowrap-center-center" style="flex-grow: 1; padding-left: 25px;">
+                    <a href="https://github.com/RobbinBob/NLVMCore">
+                        <img style="height:fit-content; max-height: 125px; min-height: 25px; width: auto; padding-top: 10px; padding-bottom: 10px;" src="/src/images/Github.png">
+                    </a>
+                    <span style="width: 25px;"></span>
+                    <a href="https://github.com/RobbinBob/NLVMCore" style="text-decoration: underline; color: #ffffff">
+                        <h2>Github Repository</h2>
+                    </a>
+                </div>
+            </div>
+            <div class="flex-container-row-nowrap-center-center" style="width: 100%; padding-left: 10%; padding-right: 10%; background-color: #00000023; max-width: 1500px;">
+                <div style="min-width: 25%; padding-top: 25px; padding-bottom: 25px;">
+                    <a>
+                        <div class="flex-container-row-nowrap-start-center" style="padding-left: 10px;">
+                            <img style="height: 10px; width: 10px;" src="/src/images/Circle.png">
+                            <span style="width: 5px;"></span>
+                            <h3 style="padding-left: 10px; padding-right: 10px; margin-top: 5px; margin-bottom: 5px;">Introduction</h3>
+                        </div>
+                    </a>
+                    <a href="API">
+                        <div class="flex-container-row-nowrap-start-center" style="padding-left: 10px;">
+                            <img style="height: 10px; width: 10px;" src="/src/images/Circle.png">
+                            <span style="width: 5px;"></span>
+                            <h3 style="padding-left: 10px; padding-right: 10px; margin-top: 5px; margin-bottom: 5px;">API Documentation</h3>
+                        </div>
+                    </a>
+                    <a>
+                        <div class="flex-container-row-nowrap-start-center" style="padding-left: 10px;">
+                            <img style="height: 10px; width: 10px;" src="/src/images/Circle.png">
+                            <span style="width: 5px;"></span>
+                            <h3 style="padding-left: 10px; padding-right: 10px; margin-top: 5px; margin-bottom: 5px;">Something</h3>
+                        </div>
+                    </a>
+                </div>
+                <div style="height: auto; min-width: 50%; flex-grow: 1;">
+                    <h1 style="padding-left: 25px;">Navigation</h1>
+                </div>
+            </div>
+
+
+            <div class="flex-container-collumn-nowrap-center-center"  style="width: 100%; max-width: 1500px; padding-left: 10%; padding-right: 10%;">
+                
+            </div>
+        </main>
+        <footer id="footer"></footer>
+    </body>
+</html>
