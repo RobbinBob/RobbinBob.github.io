@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Introduction</title>
+
+        <link rel="icon" href="/src/images/Goat.png">
+        <link rel="canonical" href="/projects/nolimits/nlvmcore/Introduction">
+
+        <link rel="stylesheet" href="/src/styles/global.css">
+        <link rel="stylesheet" href="/src/styles/figtree.css">
+        <link rel="stylesheet" href="/src/styles/flex.css">
+
+        <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+        <script src="/src/scripts/elements.js"></script>
+        <script src="/src/scripts/spacer.js"></script>
+        <script src="/src/scripts/dropdown.js"></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/a11y-dark.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/java.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+    <body class="figtree">
+        <header id="header"></header>
+        <div class="flex-container-row-nowrap-center-center" style="z-index: 5; background-image: url(/src/images/chun4.png); background-position: center; background-size: cover; width: 100%; min-height: 200px; max-height: 600px;">
+            <h1 style="font-size: 450%;">Introduction to NLVMCore</h1>
+        </div>
+        <main class="flex-container-collumn-nowrap-center-center" style="width: 100; height:auto; overflow: hidden;">
+            <!-- Brief intro and prerequesits -->
+            <p>
+                Throughout this I am going to assume you to be familiar enough with Java, and that no I will not hold your hand dearly
+                the whole time, This is for API documentation and basic use , not a babies first programming course with shapes and colours.
+                I would highly recommend scouting some online courses or resources to do with Java and then pop back after you feel confident
+                enough, or power through and wonder why you did this.
+
+                I would also recommend using VisualStudioCode and to clone/fork the repository that way you get some of the snippets I created
+                to make life a smidge easier.
+
+                I shall also only slightly appologise for my C# style coding even though this is Java, and to those questioning why; Let me 
+                have this one comfort when using Java lest I suffer Java's ways whilst also using its bad syntax style.
+            </p>
+
+            <!-- Creating your first class -->
+            <p>
+                Before you can start making your custom trains or block scripts, there is a small bit of setup required to make
+                sure everything can play nicely with each-other. For starters the NLVMCore types are part of a package called 'scripts',
+                this means all custom type must also be in the same package so that they can access necessary types. Currently NLVM does not
+                support walking up package heirarchy but I do hope soon that is changed, so for now keep it in the base 'scripts' package unless
+                you know what you're doing!
+
+                I'll highlight this here as it can help with some confusion that will happen along the line; Behaviour class *must*
+                be attached to a SceneObject for it to work. They cannot be instanced in code and NLVM will make sure of that. If you want
+                similar functionality that can be instanced at run-time then I suggest reading further down at different ways of 
+                receiving callbacks.
+
+                For most purposes you'll want to extend Behaviour which mimics somewhat the native Script class with some extra QoL.
+                If you're just going to skip the Behaviour class then you can skip along to another section as the next few chapters
+                cover the basics of using Behaviours and their counterparts. The next chapter will cover receiving callbacks using Behaviours
+                and other optional types.
+            </p>
+            
+            <!-- Behaviours and callbacks --> 
+            <p>
+                All function begins with the Behaviour class, this replaces the native Script class with easier to use functionality.
+                Just like with Script, Behaviour has a few update methods that can be overridden to add logic;<br>
+
+                Start<br>
+                Called once as the Behaviour is being initialized<br>
+                - Update
+                <br>
+                Called each render update, passing in the time taken between the previous frame and now
+                <br>
+                - LateUpdate
+                <br>
+                Called at the end of each render update, passing in the time taken between the previous frame and now
+                <br>
+                - LateUnblockedUpdate
+                <br>
+                Called at the end of each render update, unaffected by simulation pause state
+                <br>
+                - Destroy
+                <br>
+                Called just before the Behaviour is stopped
+                <br>
+
+                Method callbacks differ slightly from Script type where LateUpdate will not be called when paused, 
+                this is to correct unintended behaviour of Script onLateUpdate which was kept for its use cases.
+                If you wish to receive updates whilst the simulation is paused; use the LateUnblockedUpdate instead as this mimics onLateUpdate.
+                There is also a lack of UnblockedUpdate which is due to only the late update method having the bug present, if this changes in future I will update the API.
+                <br>
+                <br>
+
+                For more complex use cases there is also an interface type which can recieve updates similar to FrameListener;
+                IUpdateable. This interface exposes a couple methods that can receive callbacks 
+                when registered using the Behaviour register methods, allowing for more complex logic and removes the need for all update logic
+                to be placed in Behaviours. It is important to note however that a Behaviour instance must be available to handle update requests
+                which is a limitation of NLVM itself.
+                <br>
+                <pre>
+                    <code>
+Behaviour.RegisterUpdateable(IUpdateable updateable);
+Behaviour.RemoveUpdateable(IUpdateable updateable);
+                    </code>
+                </pre>
+                <br>
+                There is also a provided class type; UpdateableObject, that can be extended which removes just simplifies the registration to a single method,
+                purely to reduce a small bit of code copying and removes a single extra line :0
+                <br>
+                
+            </p>
+
+            
+        </main>
+        <footer id="footer"></footer>
+    </body>
+</html>

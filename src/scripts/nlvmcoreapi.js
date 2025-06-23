@@ -330,7 +330,7 @@ function LoadTypeContent(typeId) {
 }
 
 var path = 'https://raw.githubusercontent.com/RobbinBob/NLVMCore/main/build/api.json';
-const IS_DEVELOPMENT = false;
+const IS_DEVELOPMENT = true;
 if(IS_DEVELOPMENT) {
    path = "generated_api.json";
 }
