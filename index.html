@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="/src/styles/global.css"> 
         <link rel="stylesheet" href="/src/styles/figtree.css"> 
         <link rel="stylesheet" href="/src/styles/flex.css"> 
+        <link rel="stylesheet" href="/src/styles/icons.css"> 
 
         <link rel="stylesheet" href="/src/styles/homepage.css">
         
@@ -19,9 +20,10 @@
         <script src="/src/scripts/elements.js"></script>
         <script src="/src/scripts/background.js"></script>
     </head>
-    <body class="figtree" style="margin: 0; height: 200vh;">
+    <body class="figtree" style="margin: 0; height: 300vh;">
         <div class="image-container" style="overflow-x: hidden">
-            <div class="image" style="background-image: url('src/images/Minitile.png');"></div>
+            <div class="image" style="background-color: #252525;"></div>
+            <div class="image" style="background-image: url('src/images/Rollerocaster\ Physics.png');"></div>
             <div class="image">
                 <div class="subimage" style="background-image: url('src/images/coin_sculpt.png'); z-index: 4;"></div>
                 <div class="subimage" style="background-image: url('src/images/coin_normal.png'); z-index: 3;"></div>
@@ -33,6 +35,40 @@
         <header id="header"></header>
 
         <main style="width: 100%; height: 0px">
+            <div class="slide-content">
+                <div class="flex-container-collumn-nowrap-center-center" style="padding-left: 15%; padding-right: 15%;">
+                    <p class="global-header1-text" style="letter-spacing: 4px;">WHO AM I</p>
+                    <p class="figtree">I'm a soon-to-be postgraduate programmer interested in several 
+                        aspects of game & engine programming, currently completing undergraduate studies 
+                        on games-programming at University of Staffordshire.
+                        
+                        Over the years I have had the opportunity to explore engine-systems and
+                        work within a team to design a 2D game engine from scrach. My roles in this team
+                        focused on integrating an embedded scripting system for user-programming, and 
+                        implementing an action-based input system for the engines editor and runtime.
+
+                        Outside of University I enjoy 3D modelling and game-asset production pipelines, working
+                        with software such as; Blender, Substance Painter, Affinity Suite and Nvidia Texture Tools.
+                        This extends further once assets are within the engine with creating materials and shaders
+                        to achieve specific looks. I love the technical challenge of channel-packing to meet
+                        engine constraints and for optimisation of VRAM usage.
+
+                        Over the past few years, the graphics-side of engine development has become a larger 
+                        interest of mine, I've been experimenting with implementing renderers for standalone 
+                        applications whilst designing engine architecture to provide adequate features one would
+                        expect for a game-engine. 
+                    </p>
+                    <div class="flex-container-row-nowrap-start-center">
+                        <img class="icon" alt="Logo of C++" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/250px-ISO_C%2B%2B_Logo.svg.png">
+                        <img class="icon" alt="Logo of C#" src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Logo_C_sharp.svg">
+                        <img class="icon" alt="Logo of Lua" src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Lua-Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original">
+                        <img class="icon" alt="Logo of Affinity Studio" src="src/images/icons/affinity-studio-icon.svg">
+                        <img class="icon" alt="Logo of Blender" src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Blender_logo_no_text.svg">
+                        <img class="icon" alt="Logo of Substance Painter" src="src/images/icons/adobe-substance-3d-painter-icon.svg">
+                        <img class="icon" alt="Logo of Unity" src="src/images/icons/unity-game-engine-icon.svg">
+                    </div>
+                </div>
+            </div>
             <div class="flex-container-collumn-nowrap-center-center slide-content">
                 <p class="global-header1-text" style="letter-spacing: 4px;">PROJECTS</p>
                 <a class="homepage-button" href="projects/index">
