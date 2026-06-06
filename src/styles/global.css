@@ -40,6 +40,15 @@ h4, .global-header4-text {
 }
 
 
+.selector {
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
 .clickable { 
     cursor: default;
 }

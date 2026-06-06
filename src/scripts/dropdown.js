@@ -19,7 +19,7 @@ class dropdown extends HTMLElement {
             this.innerHTML = `
             <div class="collapsible">
                 <button class="collapsible-toggle">
-                    <img class="toggle-img" src="/src/images/Arrow.png" alt="Toggle fold">
+                    <img class="toggle-img" src="/src/images/icons/Arrow.webp" alt="Toggle fold">
                     <div id="rectangle" class="toggle-bar" style="order: 1"></div>
                     <p class="toggle-header">${toggleString}</p>
                     <div id="rectangle" class="toggle-bar" style="order: 3"></div>

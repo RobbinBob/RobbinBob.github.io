@@ -2,12 +2,14 @@
 <html>
     <base href="/">
     <head>
-        <link rel="icon" href="/src/images/Goat.png">
+        <title>Home</title>
+        <link rel="icon" href="/src/images/icons/Goat.webp">
         <link rel="canonical" href="/index">
 
         <link rel="stylesheet" href="/src/styles/global.css"> 
         <link rel="stylesheet" href="/src/styles/figtree.css"> 
         <link rel="stylesheet" href="/src/styles/flex.css"> 
+        <link rel="stylesheet" href="/src/styles/icons.css"> 
 
         <link rel="stylesheet" href="/src/styles/homepage.css">
         
@@ -18,20 +20,63 @@
         <script src="/src/scripts/elements.js"></script>
         <script src="/src/scripts/background.js"></script>
     </head>
-    <body class="figtree" style="margin: 0; height: 200vh;">
+    <body class="figtree" style="margin: 0; height: 300vh;">
         <div class="image-container" style="overflow-x: hidden">
-            <div class="image" style="background-image: url('src/images/Minitile.png');"></div>
+            <div class="image" style="background-color: #252525;"></div>
+            <div class="image" style="background-image: url('src/images/heros/Rollerocaster\ Physics.webp');"></div>
             <div class="image">
-                <div class="subimage" style="background-image: url('src/images/coin_sculpt.png'); z-index: 4;"></div>
-                <div class="subimage" style="background-image: url('src/images/coin_normal.png'); z-index: 3;"></div>
-                <div class="subimage" style="background-image: url('src/images/coin_basecol.png'); z-index: 2;"></div>
-                <div class="subimage" style="background-image: url('src/images/coin_base.png'); z-index: 1;"></div>
+                <div class="subimage" style="background-image: url('src/images/heros/coin_sculpt.webp'); z-index: 4;"></div>
+                <div class="subimage" style="background-image: url('src/images/heros/coin_normal.webp'); z-index: 3;"></div>
+                <div class="subimage" style="background-image: url('src/images/heros/coin_basecol.webp'); z-index: 2;"></div>
+                <div class="subimage" style="background-image: url('src/images/heros/coin_base.webp'); z-index: 1;"></div>
             </div>
         </div>
 
         <header id="header"></header>
 
         <main style="width: 100%; height: 0px">
+            <div class="flex-container-collumn-nowrap-center-center slide-content">
+                <p class="global-header1-text" style="letter-spacing: 4px;">WHO AM I</p>
+                <div class="flex-container-row-nowrap-start-center">
+                    <img class="selector" style="width: 250px; margin-right: 50px;" alt="Image of Me" src="src/images/bust.webp" draggable="false">
+                    <p class="figtree">I'm a passionate programmer and recently completed my undergraduate studies 
+                        on games-programming at University of Staffordshire.
+                        <br><br>
+                        Over the years I have had the opportunity to explore engine-systems and
+                        work within a team to design a 2D game engine from scrach. My roles in this team
+                        focused on integrating an embedded scripting system for user-programming, and 
+                        implementing an action-based input system for the engines editor and runtime.
+                        
+                        <br><br>
+                        Through my time as an undergraduate at university, the graphics-side of engine development has become 
+                        a larger interest of mine, I've been experimenting with implementing renderers for standalone 
+                        applications whilst designing engine architecture to provide adequate features one would
+                        expect for a game-engine. I am currently learning DirectX12 which provides me with the
+                        knowledge required for such critical roles witin games/software rendering.
+
+                        <br><br>
+                        Outside of University I enjoy 3D modelling and game-asset production pipelines, working
+                        with software such as; Blender, Substance Painter, Affinity Suite and Nvidia Texture Tools.
+                        This extends further once assets are within the engine with creating materials and shaders
+                        to achieve specific looks. I love working with technical constraints with shaders and 
+                        materials.
+                    </p>
+                </div>
+                <span style="height: 25px;"></span>
+                <div class="flex-container-collumn-nowrap-center-center">
+                    <div class="flex-container-row-nowrap-start-center">
+                        <img class="icon selector" alt="Logo of C++" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/250px-ISO_C%2B%2B_Logo.svg.png" draggable="false">
+                        <img class="icon selector" alt="Logo of C#" src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Logo_C_sharp.svg" draggable="false">
+                        <img class="icon selector" alt="Logo of Lua" src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Lua-Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" draggable="false">
+                        <img class="icon selector" alt="Logo of Affinity Studio" src="src/images/icons/affinity-studio-icon.svg" draggable="false">
+                        <img class="icon selector" alt="Logo of Blender" src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Blender_logo_no_text.svg" draggable="false">
+                        <img class="icon selector" alt="Logo of Substance Painter" src="src/images/icons/adobe-substance-3d-painter-icon.svg" draggable="false">
+                        <img class="icon selector" alt="Logo of Unity" src="src/images/icons/unity-game-engine-icon.svg" draggable="false">
+                        <img class="icon selector" alt="Logo of DirectX" src="src/images/icons/DirectX.png" draggable="false">
+                        <img class="icon selector" alt="Logo of HLSL" src="src/images/icons/HLSL.jpg" draggable="false">
+                    </div>
+                </div>
+            </div>
             <div class="flex-container-collumn-nowrap-center-center slide-content">
                 <p class="global-header1-text" style="letter-spacing: 4px;">PROJECTS</p>
                 <a class="homepage-button" href="projects/index">
