@@ -1,3 +1,6 @@
+var threshold = 10
+var prevy = 0
+
 document.addEventListener("scroll", () => {
 
     var scrollPosition = window.scrollY;
